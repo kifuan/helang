@@ -16,14 +16,16 @@ class LexerState(enum.Enum):
     NUMBER = 3
     # Increments.
     INCREMENT = 4
+    # Comments.
+    COMMENT = 5
 
 
 class Lexer:
     methods = Methods()
 
     def __init__(self, content: str):
-        # Add a whitespace to let the methods do some clean-up.
-        self._content = ''.join(line for line in content.split('\n') if not line.strip().startswith('//')) + ' '
+        # Add a newline to let the methods do some clean-up.
+        self._content = content + '\n'
         self._state = LexerState.WAIT
         self._pos = 0
         self._cache = ''
@@ -51,6 +53,10 @@ class Lexer:
         if re.match(r'\s', self._curr):
             # Matched space, skipping.
             self._pos += 1
+            return
+
+        if self._curr == '/':
+            self._state = LexerState.COMMENT
             return
 
         if re.match(r'\d', self._curr):
@@ -110,6 +116,20 @@ class Lexer:
             # Enough + operator, changing state to WAIT.
             tokens.append(Token(self._cache, TokenKind.INCREMENT))
             self._state = LexerState.WAIT
+            return
+
+        self._cache += self._curr
+        self._pos += 1
+
+    @methods.bind(LexerState.COMMENT)
+    def _lex_comment(self, tokens: List[Token]):
+        if self._cache == '/' and self._curr != '/':
+            raise BadTokenException('/')
+
+        if self._cache == '//':
+            if self._curr == '\n':
+                self._state = LexerState.WAIT
+            self._pos += 1
             return
 
         self._cache += self._curr

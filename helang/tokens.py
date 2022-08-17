@@ -25,7 +25,7 @@ class TokenKind(enum.Enum):
     # ;
     SEMICOLON = 11
     # -
-    MINUS = 12
+    SUB = 12
     # ++
     INCREMENT = 13
     # =
@@ -56,7 +56,7 @@ SINGLE_CHAR_TOKEN_KINDS = {
     ';': TokenKind.SEMICOLON,
     '=': TokenKind.ASSIGN,
     '<': TokenKind.LT,
-    '-': TokenKind.MINUS,
+    '-': TokenKind.SUB,
 }
 
 KEYWORD_KINDS = {

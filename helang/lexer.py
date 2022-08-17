@@ -1,7 +1,7 @@
 import enum
 import re
 
-from typing import *
+from typing import List
 from .tokens import Token, TokenKind, SINGLE_CHAR_TOKEN_KINDS, KEYWORD_KINDS
 from .enum_method import Methods
 from .exceptions import BadTokenException

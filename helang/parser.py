@@ -1,7 +1,9 @@
 from .tokens import Token, TokenKind
 from .exceptions import BadStatementException
-from .he_ast import *
-from typing import *
+from .he_ast import AST, VoidAST, ListAST, VarDefAST, VarAssignAST, VarExprAST,\
+    PrintAST, SprintAST, VarIncrementAST, U8SetAST, U8GetAST, Test5GAST,\
+    EmptyU8InitAST, OrU8InitAST
+from typing import List, Optional, Callable, Tuple
 
 
 class Parser:
@@ -32,6 +34,7 @@ class Parser:
             self._root_parse_var_def,
             self._root_parse_var_declare,
             self._root_parse_var_assign,
+            self._root_parse_var_increment,
             self._root_parse_expr,
             self._root_parse_test_5g,
         ]
@@ -81,6 +84,12 @@ class Parser:
         expr = self._root_parse_expr()
         self._expect(TokenKind.SEMICOLON)
         return SprintAST(expr)
+
+    def _root_parse_var_increment(self) -> AST:
+        ident = self._expect(TokenKind.IDENT)
+        self._expect(TokenKind.INCREMENT)
+        self._expect(TokenKind.SEMICOLON)
+        return VarIncrementAST(ident.content)
 
     def _root_parse_test_5g(self) -> AST:
         self._expect(TokenKind.TEST_5G)

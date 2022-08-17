@@ -5,7 +5,11 @@ Next-Generation **Cyber** Programming Language from Li Tang.
 引个流先：https://www.bilibili.com/video/BV1XW4y1h79A/
 
 ## 分支
-何语言 Kotlin 脚本版 [HeLangKotlinScriptImpl](https://github.com/shaokeyibb/HeLangKotlinScriptImpl)
+
+非常好实现！爱来自 **Cyber Spaces**
+
++ 何语言 Kotlin 脚本版 [HeLangKotlinScriptImpl](https://github.com/shaokeyibb/HeLangKotlinScriptImpl)
++ L! T! C! (etc.)
 
 ## 介绍
 
@@ -43,9 +47,11 @@ Next-Generation **Cyber** Programming Language from Li Tang.
 
 好，就这么多，应该没什么难的。
 
-## 语法
+## 基本语法
 
 **Saint He** 曾说，一切类型均为`u8`，是什么意思呢？这个词倒过来就是`8u`，看来圣人也喜欢玩贴吧。
+
+除此之外，`u8` 与 `v8` 形似，所以能不能关注[永雏塔菲](https://space.bilibili.com/1265680561)喵，关注永雏塔菲谢谢喵。
 
 如你所见，我们用**bitwise or**，即`|`代替了传统数组的符号。**都什么年代了还在写传统数组**？
 
@@ -107,6 +113,43 @@ sprint 72 | 101 | 108 | 108 | 111 | 44 | 32 | 119 | 111 | 114 | 108 | 100 | 33;
 
 通过降低可读性，换来了指数级的性能提升，不愧赛博世界的唯一真神。
 
+## 自增运算
+
+我们注意到，**Saint He** 的代码中还出现了自增运算：`++`
+
+所以，我们也支持这种运算。
+
+```c
+u8 a = 1 | 2 | 3;
+a++;
+print a;
+// 2 | 3 | 4
+```
+
+## 变量声明与赋值
+
+在早期版本中，我们的仅仅支持变量的定义，不支持修改和声明，因为 **Saint He** 喜欢 `immutable`。
+
+经过意见征求，现在已经可以做到这三个方面了！
+
+```c
+// 现在支持变量先声明后定义，可以写出这种代码：
+u8 a;
+a = 1 | 2;
+
+// 早期版本仅支持下面这种写法，当然现在也支持：
+u8 b = 3 | 4;
+```
+
+注意！如果你没有声明或定义一个变量，尝试直接给它赋值，你会收获`CyberNameException`。
+
+```c
+c = 1 | 2 | 3;
+// helang.exceptions.CyberNameException: a is not defined.
+```
+
+我们作为高科技语言，当然是需要严谨的。
+
 ## 5G测速
 
 理论上这块也属于语法，但我就是要把它单独摘出来。
@@ -124,6 +167,8 @@ test5g;
 关注[永雏塔菲](https://space.bilibili.com/1265680561)喵，关注永雏塔菲谢谢喵。
 
 关注[猫雷NyaRu_Official](https://space.bilibili.com/697091119)谢谢喵，要吃中国的大米喵。
+
+举办[东雪莲Official](https://space.bilibili.com/1437582453/)谢谢喵，不能让立本V吃中国的大米喵。
 
 ## 附加
 

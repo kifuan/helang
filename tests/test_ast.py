@@ -1,6 +1,7 @@
 import unittest
 
-from helang.he_ast import *
+from helang.he_ast import VarExprAST, U8GetAST, U8SetAST
+from helang.u8 import U8
 
 
 class TestAST(unittest.TestCase):

@@ -1,13 +1,14 @@
 import random
 
-from typing import *
+from typing import Dict, Optional, List
 from .u8 import U8
 from .speed_tester import run_speed_test
+from .exceptions import CyberNameException
 
 
 class AST:
     def evaluate(self, env: Dict[str, U8]) -> U8:
-        raise NotImplemented()
+        raise NotImplementedError()
 
 
 class VarDefAST(AST):
@@ -28,10 +29,20 @@ class VarAssignAST(AST):
 
     def evaluate(self, env: Dict[str, U8]) -> U8:
         if self._ident not in env.keys():
-            raise NameError(f'variable {self._ident} is not defined.')
+            raise CyberNameException(f'{self._ident} is not defined.')
         val = self._val.evaluate(env)
         env[self._ident] = val
         return val
+
+
+class VarIncrementAST(AST):
+    def __init__(self, ident: str):
+        self._ident = ident
+
+    def evaluate(self, env: Dict[str, U8]) -> U8:
+        var = env[self._ident]
+        var.increment()
+        return var
 
 
 class VarExprAST(AST):
@@ -66,6 +77,17 @@ class OrU8InitAST(AST):
         elements = [self._first]
         elements.extend(second)
         return U8(elements)
+
+
+class SubtractionAST(AST):
+    def __init__(self, first: AST, second: AST):
+        self._first = first
+        self._second = second
+
+    def evaluate(self, env: Dict[str, U8]) -> U8:
+        first = self._first.evaluate(env)
+        second = self._second.evaluate(env)
+        return first - second
 
 
 class ListAST(AST):

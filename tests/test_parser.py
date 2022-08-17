@@ -50,6 +50,11 @@ class TestParser(unittest.TestCase):
             a = 3 | 4;
         """
 
+        self.var_increment_code = """
+            u8 a = 1 | 2 | 3;
+            a++;
+        """
+
         self.env = dict()
 
     def test_parse_def(self):
@@ -86,3 +91,7 @@ class TestParser(unittest.TestCase):
     def test_parse_var_assign(self):
         parse(self.var_assign_code).evaluate(self.env)
         self.assertEqual(self.env['a'].value, [3, 4])
+
+    def test_parse_increment(self):
+        parse(self.var_increment_code).evaluate(self.env)
+        self.assertEqual(self.env['a'].value, [2, 3, 4])

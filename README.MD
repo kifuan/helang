@@ -168,6 +168,8 @@ test5g;
 
 关注[猫雷NyaRu_Official](https://space.bilibili.com/697091119)谢谢喵，要吃中国的大米喵。
 
+举办[东雪莲Official](https://space.bilibili.com/1437582453/)谢谢喵，不能让立本V吃中国的大米喵。
+
 ## 附加
 
 现在是凌晨两点，我治好了自己的精神内耗。

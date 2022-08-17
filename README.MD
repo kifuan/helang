@@ -14,7 +14,7 @@ Next-Generation **Cyber** Programming Language from Li Tang.
 
 注：如果以**普通时间单位**（Basic Unit of Plain Time, [**BUPT**](https://baike.baidu.com/item/%E5%8C%97%E4%BA%AC%E9%82%AE%E7%94%B5%E5%A4%A7%E5%AD%A6/139535?from=kg)）作为标准单位，本项目开发时长为`1! + 5! + 5! + 5! = 361 `分钟。
 
-注2：**BUPT** 在赛博世界还可以写为 Beijing University of Posts and Telecommunications，北京邮电大学（声明：我对本学府无恶意，我认为这是一所优秀的学校，我只是对某个人）。
+注2：**BUPT** 在赛博世界还可以写为 Beijing University of Posts and Telecommunications，北京邮电大学（声明：我对本学府无恶意，我认为这是一所优秀的学校，毕竟有赛博丁真和粘连科技两大贵物，我只是对某个人）。
 
 ## 语法
 
@@ -72,3 +72,4 @@ print forceCon;
 ## 附加
 
 现在是凌晨两点，我治好了自己的精神内耗。
+你的代码写的太精妙我不会改就是想要个pr快点给我。

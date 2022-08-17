@@ -7,7 +7,8 @@ MUSICS = [
     'Kill You', 'Lighters', 'ZOOD', 'Love the Way You Lie',
     'The Monster', 'Numb Encore', 'Kinds Never Die', 'I Need a Doctor',
     'Lose Yourself', 'Mockingbird', 'Beautiful', 'Not Afraid',
-    'Rap God', 'Phenomenal', 'Stan', 'Space Bound', 'Stan', 'Guts Over Fear',
+    'Rap God', 'Phenomenal', 'Stan', 'Space Bound', 'Stan',
+    'Guts Over Fear', 'Spade'
 ]
 
 SUFFIX = [

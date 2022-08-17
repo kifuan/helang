@@ -11,7 +11,8 @@ class TestLexer(unittest.TestCase):
 
     def setUp(self) -> None:
         self.code = """
-          u8 a = 1 | 2
+          u8 a = 1 | // Comment inline.
+          2
           // Comment for single line.
         """
 

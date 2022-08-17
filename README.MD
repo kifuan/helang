@@ -45,6 +45,13 @@ Next-Generation **Cyber** Programming Language from Li Tang.
 
 4. 你可以修改`great.he`，然后再次运行`main.py`，查看你的代码运行结果。
 
+5. 你可以运行`shell.py`。
+
+   ```bash
+   > python shell.py
+   ```
+来直接输入HeLang指令与Saint He进行赛博空间的对话
+
 好，就这么多，应该没什么难的。
 
 ## 基本语法

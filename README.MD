@@ -260,6 +260,8 @@ test5g;
 
 关注[有栖Mana_Official](https://space.bilibili.com/3149619)，谢谢喵。
 
+关注[洛天依](https://space.bilibili.com/36081646)，比赛博丁真更像人的V家歌姬！
+
 ## 附加
 
 现在是凌晨两点，我治好了自己的精神内耗。

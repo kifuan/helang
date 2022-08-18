@@ -36,6 +36,30 @@ Next-Generation **Cyber** Programming Language from Li Tang.
 
 ## 使用方法
 
+### pip安装
+
+> 后续可以添加到pypi
+
+1. 把源代码拉下来：
+
+   ```bash
+   > git clone git@github.com:kifuan/helang.git
+   ```
+   
+2. 安装：
+   
+   ```bash
+   > pip install .
+   ```
+
+3. 运行
+
+    ```bash
+    > helang shell
+    ```
+
+### 源码安装
+
 1. 把源代码拉下来：
 
    ```bash
@@ -48,16 +72,16 @@ Next-Generation **Cyber** Programming Language from Li Tang.
    > pip install -r requirements.txt
    ```
 
-3. 你可以修改**伟大的脚本** `great.he`，然后以 `great` 的方式启动 `launch.py`：
+3. 你可以修改**伟大的脚本** `great.he`，然后以 `great` 的方式启动 `helang.py`：
 
    ```bash
-   > python launch.py great
+   > python helang.py great
    ```
 
-4. 你还可以以 `shell` 的方式启动`launch.py`，通过直接输入 HeLang 指令与 **Saint He** 进行一个赛博空间的对话：
+4. 你还可以以 `shell` 的方式启动`helang.py`，通过直接输入 HeLang 指令与 **Saint He** 进行一个赛博空间的对话：
 
    ```bash
-   > python launch.py shell
+   > python helang.py shell
    ```
 
    此时，在行尾就可以不输入分号了，我们会帮你加上（输入也是可以的，意味着你对 **Saint He** 更加虔诚）。

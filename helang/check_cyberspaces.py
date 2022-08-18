@@ -1,4 +1,4 @@
-import requests
+import urllib.request
 import re
 import json
 
@@ -14,12 +14,12 @@ _AMERICAN_REGIONS = {
 
 def _get_region() -> str:
     try:
-        req = requests.get('https://pv.sohu.com/cityjson?ie=utf-8')
+        req = urllib.request.urlopen('https://pv.sohu.com/cityjson?ie=utf-8')
     except Exception as e:
         raise CyberNetworkException(f'failed to request: {e}')
-    if req.status_code != 200:
-        raise CyberNetworkException(f'request failed with status code {req.status_code}')
-    info = json.loads(re.findall(r'{.+}', req.text)[0])
+    if req.getcode() != 200:
+        raise CyberNetworkException(f'request failed with status code {req.getcode()}')
+    info = json.loads(re.findall(r'{.+}', req.read().decode())[0])
     return info['cname']
 
 

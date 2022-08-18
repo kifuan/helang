@@ -211,6 +211,8 @@ test5g;
 
 关注[HiiroVTuber](https://space.bilibili.com/508963009)，不是425KG的粉色喵！
 
+关注[露早GOGO](https://space.bilibili.com/1669777785/)！关注露早汪，关注露早谢谢汪！
+
 ## 附加
 
 现在是凌晨两点，我治好了自己的精神内耗。

@@ -235,11 +235,11 @@ test5g;
 
 Подпишитесь на [Star Pupil_Official](https://space.bilibili.com/401315430), чтобы получить йо-йо-мей!
 
-Подписывайтесь на [Jiaran](https://space.bilibili.com/672328094), и вы останетесь довольны! 
+Подписывайтесь на [Diana](https://space.bilibili.com/672328094), и вы останетесь довольны! 
 
-Подписывайтесь на [Xiang Wan](https://space.bilibili.com/672346917), подписывайтесь на Xiang Wan, еще не поздно!
+Подписывайтесь на [Ava](https://space.bilibili.com/672346917), подписывайтесь на Xiang Wan, еще не поздно!
 
-Подписывайтесь на [Nailin](https://space.bilibili.com/672342685), подписывайтесь на Nailin,спасибо!
+Подписывайтесь на [Eileen](https://space.bilibili.com/672342685), подписывайтесь на Nailin,спасибо!
 
 Подписывайтесь на [Bella](https://space.bilibili.com/672353429), подписывайтесь на Bella Му, спасибо Му!
 

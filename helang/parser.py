@@ -2,7 +2,7 @@ from .tokens import Token, TokenKind
 from .exceptions import BadStatementException
 from .he_ast import AST, VoidAST, ListAST, VarDefAST, VarAssignAST, VarExprAST,\
     PrintAST, SprintAST, VarIncrementAST, U8SetAST, U8GetAST, Test5GAST,\
-    EmptyU8InitAST, OrU8InitAST, CyberspacesAST
+    EmptyU8InitAST, OrU8InitAST, CyberspacesAST, ArithmeticAST, ArithmeticOperator
 from typing import List, Optional, Callable
 
 
@@ -176,12 +176,16 @@ class Parser:
           ;
         :return: AST for current expression.
         """
-        expr_parsers = [self._expr_parse_empty_u8, self._expr_parse_or_u8, self._expr_parse_var]
-        for parser in expr_parsers:
+        parsers = [
+            self._expr_parse_empty_u8,
+            self._expr_parse_or_u8,
+            self._expr_parse_var
+        ]
+        for parser in parsers:
             saved_pos = self._pos
             try:
                 prev = parser()
-                return self._root_parse_left_recur_expr(prev)
+                return self._left_recur_expr_parse(prev)
             except BadStatementException:
                 self._pos = saved_pos
         raise BadStatementException('cannot parse expressions')
@@ -221,11 +225,13 @@ class Parser:
         ident = self._expect(TokenKind.IDENT)
         return VarExprAST(ident.content)
 
-    def _root_parse_left_recur_expr(self, prev: AST) -> AST:
+    def _left_recur_expr_parse(self, prev: AST) -> AST:
         """
         expr'
             : LS expr RS ASSIGN expr expr'
             | LS expr RS expr'
+            | SUB expr expr'
+            | ADD expr expr'
             | empty
             ;
         :param prev:
@@ -234,12 +240,14 @@ class Parser:
         parsers: List[Callable[[AST], AST]] = [
             self._left_recur_expr_parse_u8_set,
             self._left_recur_expr_parse_u8_get,
+            self._left_recur_expr_parse_sub,
+            self._left_recur_expr_parse_add,
         ]
         for parser in parsers:
             saved_pos = self._pos
             try:
                 prev_expr = parser(prev)
-                return self._root_parse_left_recur_expr(prev_expr)
+                return self._left_recur_expr_parse(prev_expr)
             except BadStatementException:
                 self._pos = saved_pos
         # Tried all left-recursive grammars, none has matched.
@@ -258,3 +266,13 @@ class Parser:
         subscript_expr = self._root_parse_expr()
         self._expect(TokenKind.RS)
         return U8GetAST(list_expr, subscript_expr)
+
+    def _left_recur_expr_parse_sub(self, first: AST) -> ArithmeticAST:
+        self._expect(TokenKind.SUB)
+        second = self._root_parse_expr()
+        return ArithmeticAST(first, second, ArithmeticOperator.SUB)
+
+    def _left_recur_expr_parse_add(self, first: AST) -> ArithmeticAST:
+        self._expect(TokenKind.ADD)
+        second = self._root_parse_expr()
+        return ArithmeticAST(first, second, ArithmeticOperator.ADD)

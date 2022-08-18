@@ -110,11 +110,13 @@ class Lexer:
     @methods.bind(LexerState.INCREMENT)
     def _lex_increment(self, tokens: List[Token]):
         if self._cache == '+' and self._curr != '+':
-            raise BadTokenException('only ++ operator is expected, as the King He has NOT written single +')
+            tokens.append(Token('+', TokenKind.ADD))
+            self._state = LexerState.WAIT
+            return
 
         if self._cache == '++':
             # Enough + operator, changing state to WAIT.
-            tokens.append(Token(self._cache, TokenKind.INCREMENT))
+            tokens.append(Token('++', TokenKind.INCREMENT))
             self._state = LexerState.WAIT
             return
 

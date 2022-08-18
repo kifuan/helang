@@ -7,6 +7,8 @@
 <a href="LICENSE"><img src="https://img.shields.io/github/license/kifuan/helang" alt="MIT License"></a>
 <a href="https://github.com/kifuan/helang/actions/workflows/tests.yml"><img src="https://github.com/kifuan/helang/actions/workflows/tests.yml/badge.svg" alt="Test"></a>
 
+[中文](README.MD) [Русский](README-RU.MD)
+
 
 Next-Generation **Cyber** Programming Language from Li Tang.
 
@@ -185,6 +187,38 @@ print a;
 // 2 | 3 | 4
 ```
 
+## 加减运算
+
+**Saint He** 曾说，`whichKey - 1`，所以我们现在也提供减法运算了。
+
+```c
+u8 whichKey = 1 | 2 | 6 | 7;
+print whichKey - 1;
+// 0 | 1 | 5 | 6
+```
+
+下面以几个实例介绍如何在 `u8` 之间进行运算：
+
+```c
+u8 a = 1;
+u8 b = 1 | 2 | 3;
+u8 c = 2 | 4 | 6;
+u8 d = 5 | 9;
+
+print a + b;
+// 2 | 3 | 4
+print b + c;
+// 3 | 6 | 9
+print b - c;
+// -1 | -2 | -3
+print b + d;
+// helang.exceptions.CyberArithmeticException: illegal operation: 1 | 2 | 3 + 5 | 9
+print a - b;
+// helang.exceptions.CyberArithmeticException: illegal operation: 1 - 1 | 2 | 3
+```
+
+相信即使你是一个初入 **Cyber Spaces** 新手，也可以看出来什么是合法的语句了。
+
 ## 变量声明与赋值
 
 在早期版本中，我们的仅仅支持变量的定义，不支持修改和声明，因为 **Saint He** 喜欢 `immutable`。
@@ -259,6 +293,15 @@ test5g;
 关注[AIChannel中国绊爱](https://space.bilibili.com/484322035)！超级可爱的 Super AI 薄纱赛博丁真！
 
 关注[有栖Mana_Official](https://space.bilibili.com/3149619)，谢谢喵。
+
+关注[洛天依](https://space.bilibili.com/36081646)，比赛博丁真更像人的V家歌姬！
+
+关注[传统丁真](https://space.bilibili.com/1463028352)，什么年代了还在关注赛博丁真，不如来怀古！
+
+关注[凑阿夸](https://space.bilibili.com/375504219)和[rinco小姐](https://www.nicovideo.jp/user/45194653
+)！傻气溢出的海洋（屑）女仆（洋葱）和喜欢水濑祈的可爱唱见 期待木口回旋捏 另外请支持阿夸主演的[galgame](https://shop.hololivepro.com/products/aquarium_hololive_official_edition)谢谢！
+
+关注[原神](https://space.bilibili.com/401742377)，玩《原神》比看赛博丁真好多了！
 
 ## 附加
 

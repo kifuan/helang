@@ -2,15 +2,21 @@ from helang.lexer import Lexer
 from helang.tokens import Token, TokenKind
 
 
-code = """
+COMMENTS = """
 u8 a = 1 | // Comment inline.
 2
 // Comment for single line.
 """
 
+OPERATORS = """
+a++
+a+12
+a-b+22
+"""
 
-def test_lexer():
-    lexer = Lexer(code)
+
+def test_comments():
+    lexer = Lexer(COMMENTS)
     tokens = lexer.lex()
     expected = [
         Token('u8', TokenKind.U8),
@@ -19,6 +25,27 @@ def test_lexer():
         Token('1', TokenKind.NUMBER),
         Token('|', TokenKind.OR),
         Token('2', TokenKind.NUMBER)
+    ]
+
+    assert tokens == expected
+
+
+def test_operators():
+    tokens = Lexer(OPERATORS).lex()
+    expected = [
+        Token('a', TokenKind.IDENT),
+        Token('++', TokenKind.INCREMENT),
+
+        Token('a', TokenKind.IDENT),
+        Token('+', TokenKind.ADD),
+        Token('12', TokenKind.NUMBER),
+
+
+        Token('a', TokenKind.IDENT),
+        Token('-', TokenKind.SUB),
+        Token('b', TokenKind.IDENT),
+        Token('+', TokenKind.ADD),
+        Token('22', TokenKind.NUMBER)
     ]
 
     assert tokens == expected

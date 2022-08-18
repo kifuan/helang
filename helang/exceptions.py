@@ -14,7 +14,7 @@ class CyberNameException(HeLangException):
     ...
 
 
-class CyberSubtractionException(HeLangException):
+class CyberArithmeticException(HeLangException):
     ...
 
 

@@ -1,5 +1,5 @@
 from typing import Optional, List, Union
-from .exceptions import CyberSubtractionException, CyberU8ComparingException, \
+from .exceptions import CyberArithmeticException, CyberU8ComparingException, \
     CyberNotSupportedException
 
 
@@ -46,7 +46,23 @@ class U8:
             # Vector subtraction.
             return U8([self.value[i] - other.value[i] for i in range(len(self.value))])
 
-        raise CyberSubtractionException(f'illegal subtraction: {self.value} - {other.value}')
+        raise CyberArithmeticException(f'illegal operation: {self} - {other}')
+
+    def __add__(self, other: 'U8'):
+        a, b = self, other
+
+        if len(a.value) == 1:
+            a, b = b, a
+
+        if len(b.value) == 1:
+            # Normal addition.
+            return U8([v + b.value[0] for v in a.value])
+
+        if len(a.value) == len(b.value):
+            # Vector addition.
+            return U8([a.value[i] + b.value[i] for i in range(len(a.value))])
+
+        raise CyberArithmeticException(f'illegal operation: {self} + {other}')
 
     def __getitem__(self, subscripts: 'U8'):
         # Like the operation of sublist.

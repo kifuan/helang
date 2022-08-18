@@ -44,6 +44,8 @@ class TokenKind(enum.Enum):
     SPRINT = 20
     # Whether current region is in the Cyber Spaces.
     CYBERSPACES = 21
+    # +
+    ADD = 22
 
 
 SINGLE_CHAR_TOKEN_KINDS = {

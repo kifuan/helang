@@ -6,6 +6,8 @@ from helang.lexer import Lexer
 from helang.parser import Parser
 from helang.exceptions import HeLangException
 from helang.u8 import U8
+from helang.lt_code.window import LTCodeWindow
+from PySide6.QtWidgets import QApplication
 
 
 SHELL_HELP = """
@@ -31,7 +33,12 @@ def process_shell_keywords(text: str, env: Dict[str, U8]):
 def launch_shell():
     env = dict()
     while True:
-        text = input('Speak to Saint He > ').strip()
+        text = ''
+        try:
+            text = input('Speak to Saint He > ').strip()
+        except (EOFError, KeyboardInterrupt):
+            process_shell_keywords('exit', env)
+
         if text == '':
             continue
 
@@ -52,6 +59,13 @@ def launch_shell():
             raise e
 
 
+def launch_editor():
+    app = QApplication()
+    editor = LTCodeWindow()
+    editor.show()
+    sys.exit(app.exec_())
+
+
 def launch_great_script():
     with open('./great.he', 'r') as f:
         content = f.read()
@@ -64,6 +78,7 @@ def launch_great_script():
 LAUNCHERS = {
     'great': launch_great_script,
     'shell': launch_shell,
+    'editor': launch_editor,
 }
 
 

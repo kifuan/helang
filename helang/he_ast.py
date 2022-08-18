@@ -1,6 +1,7 @@
+import enum
 import random
 
-from typing import Dict, Optional, List
+from typing import Dict, Optional, List, Tuple
 from .u8 import U8
 from .check_cyberspaces import check_cyberspaces
 from .speed_tester import run_speed_test
@@ -82,17 +83,6 @@ class OrU8InitAST(AST):
         return U8(elements)
 
 
-class SubtractionAST(AST):
-    def __init__(self, first: AST, second: AST):
-        self._first = first
-        self._second = second
-
-    def evaluate(self, env: Dict[str, U8]) -> U8:
-        first = self._first.evaluate(env)
-        second = self._second.evaluate(env)
-        return first - second
-
-
 class ListAST(AST):
     def __init__(self, asts: List[AST]):
         self.asts = asts
@@ -168,3 +158,57 @@ class CyberspacesAST(AST):
         check_cyberspaces()
         return U8()
 
+
+class ArithmeticOperator(enum.Enum):
+    ADD = 1
+    SUB = 2
+
+
+def _operate(a: U8, b: U8, op: ArithmeticOperator):
+    if op == ArithmeticOperator.SUB:
+        return a - b
+    elif op == ArithmeticOperator.ADD:
+        return a + b
+    else:
+        raise NotImplementedError()
+
+
+class ArithmeticAST(AST):
+    def __init__(self, first: AST, second: AST, op: ArithmeticOperator):
+        self._first = first
+        self._second = second
+        self._op = op
+
+    def evaluate(self, env: Dict[str, U8]) -> U8:
+        # TODO multiplication and division.
+        asts, operators = self._expand()
+        u8s = [ast.evaluate(env) for ast in asts]
+        while len(u8s) > 1:
+            first = u8s.pop(0)
+            second = u8s.pop(0)
+            op = operators.pop(0)
+            result = _operate(first, second, op)
+            u8s.insert(0, result)
+        return u8s[0]
+
+    def _expand(self) -> Tuple[List[AST], List[ArithmeticOperator]]:
+        asts = []
+        operators = []
+
+        if isinstance(self._first, ArithmeticAST):
+            asts_second, operators_second = self._first._expand()
+            asts.extend(asts_second)
+            operators.extend(operators_second)
+        else:
+            asts.append(self._first)
+
+        operators.append(self._op)
+
+        if isinstance(self._second, ArithmeticAST):
+            asts_second, operators_second = self._second._expand()
+            asts.extend(asts_second)
+            operators.extend(operators_second)
+        else:
+            asts.append(self._second)
+
+        return asts, operators

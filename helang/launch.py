@@ -67,7 +67,10 @@ LAUNCHERS = {
 }
 
 
-if __name__ == '__main__':
+def main():
+    """
+    main function
+    """
     target = sys.argv[-1]
     if target not in LAUNCHERS.keys():
         legal_targets = ', '.join(LAUNCHERS.keys())
@@ -75,3 +78,7 @@ if __name__ == '__main__':
         sys.exit(-1)
 
     LAUNCHERS[target]()
+
+
+if __name__ == '__main__':
+    main()

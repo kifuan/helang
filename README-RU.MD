@@ -251,4 +251,11 @@ test5g;
 
 Подпишитесь на [AIChannel China Trip Love](https://space.bilibili.com/484322035)! Супер милый Super AI Cyber ​​Ding !
 
-Подпишитесь на [Luo Tianyi](https://space.bilibili.com/36081646), Бодинг действительно больше похож на человеческую певицу Ви!
+Подпишитесь на [Luo Tianyi](https://space.bilibili.com/36081646), Кибер Дин Жень действительно больше похож на человеческую певицу Ви!
+
+Подписывайтесь на [Традиционный Дин Жень] (https://space.bilibili.com/1463028352), в каком возрасте еще обращать внимание на Кибер Дин Жень, почему бы и вам не поностальгировать!
+
+Подпишитесь на [Minato Acqua](https://space.bilibili.com/375504219) и [Ms rinco](https://www.nicovideo.jp/user/45194653)
+)! Глупый переполненный океан (крошки) горничная (луковица) и милое пение, кто любит Минасе Ини, с нетерпением жду окольного щипка Кигути. Также, пожалуйста, поддержите [galgame] (https://shop.hololivepro.com/products/aquarium_hololive_official_edition) спасибо!
+
+Подписывайтесь на [Genshin] (https://space.bilibili.com/401742377), играть в Genshin намного лучше, чем смотреть Кибер Дин Жень!

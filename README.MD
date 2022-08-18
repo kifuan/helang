@@ -256,6 +256,8 @@ test5g;
 
 关注[AIChannel中国绊爱](https://space.bilibili.com/484322035)！超级可爱的 Super AI 薄纱赛博丁真！
 
+关注[有栖Mana_Official](https://space.bilibili.com/3149619)，谢谢喵。
+
 ## 附加
 
 现在是凌晨两点，我治好了自己的精神内耗。

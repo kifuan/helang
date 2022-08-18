@@ -253,6 +253,8 @@ test5g;
 
 关注[露早GOGO](https://space.bilibili.com/1669777785/)！关注露早汪，关注露早谢谢汪！
 
+关注[AIChannel中国绊爱](https://space.bilibili.com/484322035)！超级可爱的Super AI薄纱赛博丁真！
+
 ## 附加
 
 现在是凌晨两点，我治好了自己的精神内耗。

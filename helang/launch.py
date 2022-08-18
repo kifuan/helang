@@ -31,7 +31,13 @@ def process_shell_keywords(text: str, env: Dict[str, U8]):
 def launch_shell():
     env = dict()
     while True:
-        text = input('Speak to Saint He > ').strip()
+        text = ''
+        try:
+            text = input('Speak to Saint He > ').strip()
+        except EOFError:
+            print('\nSaint He bless you.')
+            sys.exit(0)
+
         if text == '':
             continue
 

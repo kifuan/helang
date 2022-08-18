@@ -15,7 +15,7 @@
 
 отличная работа！любовь от **Cyber Spaces**！
 
-+ HeLang： `Kotlin` скрипт [HeLangKotlinScriptImpl](https://github.com/shaokeyibb/HeLangKotlinScriptImpl)
++ HeLang： `Kotlin` скрипт [HeLangKotlinScriptImpl](https://github.com/shaokeyibb/HeLangKotlinScriptImpl) --- [Принцип реализации](https://my.minecraft.kim/tech/2022/08/18/post-740/)
 + HeLang： версия `C#` [HeLangSharp](https://github.com/Cyl18/HeLangSharp)
 + `ArchLinux` https://github.com/BenderBlog/Practise-Programs/tree/main/Helang-PKGBUILD
 

@@ -24,6 +24,14 @@ SUMMARY_STRING = '''
 Data used | {}MB
 Download files | {}
 Location | BUPT Xitucheng Campus
+
+5G speed test finished
+
+=== HeLang protects your pure disk memory ===
+All test files were deleted
+Data freed | {}MB
+Delete files | {}
+Location | BUPT Xitucheng Campus
 =============================================
 '''.strip()
 
@@ -44,4 +52,4 @@ def run_speed_test():
         time.sleep(random.randint(30, 70) / 1000)
         total_size += curr_size
     print()
-    print(SUMMARY_STRING.format(total_size, len(MUSICS)))
+    print(SUMMARY_STRING.format(total_size, len(MUSICS), total_size, len(MUSICS)))

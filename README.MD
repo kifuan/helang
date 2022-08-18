@@ -1,5 +1,3 @@
-# [中文](https://github.com/kifuan/helang#readme)
-# [Русский](https://github.com/kifuan/Readme-ru.md) 
 # HeLang：何语言
 
 <a href="https://github.com/kifuan/helang/stargazers"><img src="https://img.shields.io/github/stars/kifuan/helang.svg" alt="Stars"></a>

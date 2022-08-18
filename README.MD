@@ -16,7 +16,7 @@ Next-Generation **Cyber** Programming Language from Li Tang.
 
 非常好作品！爱来自 **Cyber Spaces**！
 
-+ 何语言 `Kotlin` 脚本版 [HeLangKotlinScriptImpl](https://github.com/shaokeyibb/HeLangKotlinScriptImpl)
++ 何语言 `Kotlin` 脚本版 [HeLangKotlinScriptImpl](https://github.com/shaokeyibb/HeLangKotlinScriptImpl) --- [实现原理](https://my.minecraft.kim/tech/2022/08/18/post-740/)
 + 何语言 `C#` 版 [HeLangSharp](https://github.com/Cyl18/HeLangSharp)
 + 登陆 `ArchLinux` https://github.com/BenderBlog/Practise-Programs/tree/main/Helang-PKGBUILD
 + L! T! C! (etc.)

@@ -296,6 +296,9 @@ test5g;
 
 关注[传统丁真](https://space.bilibili.com/1463028352)，什么年代了还在关注赛博丁真，不如来怀古！
 
+关注[凑阿夸](https://space.bilibili.com/375504219)和[rinco小姐](https://www.nicovideo.jp/user/45194653
+)！傻气溢出的海洋（屑）女仆（洋葱）和喜欢水濑祈的可爱唱见 期待木口回旋捏 另外请支持阿夸主演的[galgame](https://shop.hololivepro.com/products/aquarium_hololive_official_edition)谢谢！
+
 ## 附加
 
 现在是凌晨两点，我治好了自己的精神内耗。

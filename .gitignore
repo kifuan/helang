@@ -3,3 +3,6 @@ helang.iml
 __pycache__
 .pytest_cache
 .vs
+
+build/
+*.egg-info/

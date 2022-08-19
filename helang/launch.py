@@ -10,6 +10,7 @@ from helang.u8 import U8
 from helang.lt_code.window import LTCodeWindow
 from PySide6.QtWidgets import QApplication
 
+
 SHELL_HELP = """
 .help  Print this help message
 .exit  Exit the shell
@@ -87,7 +88,6 @@ def main():
     Main function
     """
     target = sys.argv[-1]
-
     if target not in LAUNCHERS.keys():
         legal_targets = ', '.join(LAUNCHERS.keys())
         print(f'Invalid launch target {target}, expected target: {legal_targets}.')

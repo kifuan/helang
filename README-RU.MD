@@ -56,6 +56,8 @@
 
    ```bash
    > pip install -r requirements.txt
+   # if need GUI
+   > pip install -r requirements-gui.txt
    ```
 
 3. Вы можете изменить **отличный скрипт** `great.he` и запустить `helang.py` как `great`:

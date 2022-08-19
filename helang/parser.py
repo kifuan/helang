@@ -5,8 +5,8 @@ from .exceptions import BadStatementException
 from .he_ast import (
     AST, VoidAST, ListAST, VarDefAST, VarAssignAST, VarExprAST,
     PrintAST, SprintAST, VarIncrementAST, U8SetAST, U8GetAST, Test5GAST,
-    EmptyU8InitAST, OrU8InitAST, CyberspacesAST, OperationAST, Operator,
-    LogoAST
+    Test5GMusicAST, Test5GAppAST, EmptyU8InitAST, OrU8InitAST,
+    CyberspacesAST, OperationAST, Operator, LogoAST
 )
 
 
@@ -181,12 +181,30 @@ class Parser:
         :return: AST for testing 5G.
         """
         self._expect(TokenKind.TEST_5G)
-        try:
-            expr = self._root_parse_expr()
-        except:
-            expr = 0
         self._expect(TokenKind.SEMICOLON)
-        return Test5GAST(expr)
+        return Test5GAST()
+
+    @_ruled_methods.bind(Rule.ROOT)
+    def _root_parse_test_5g(self) -> Test5GMusicAST:
+        """
+        test_5g: TEST_5G MUSIC SEMICOLON;
+        :return: AST for testing 5G.
+        """
+        self._expect(TokenKind.TEST_5G)
+        self._expect(TokenKind.MUSIC)
+        self._expect(TokenKind.SEMICOLON)
+        return Test5GMusicAST()
+
+    @_ruled_methods.bind(Rule.ROOT)
+    def _root_parse_test_5g(self) -> Test5GAppAST:
+        """
+        test_5g: TEST_5G APP SEMICOLON;
+        :return: AST for testing 5G.
+        """
+        self._expect(TokenKind.TEST_5G)
+        self._expect(TokenKind.APP)
+        self._expect(TokenKind.SEMICOLON)
+        return Test5GAppAST()
 
     @_ruled_methods.bind(Rule.ROOT)
     def _root_parse_cyberspaces(self) -> CyberspacesAST:

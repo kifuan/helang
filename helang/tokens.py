@@ -60,6 +60,10 @@ class TokenKind(enum.Enum):
     LEQ = 28
     # Not equals to, !=
     NEQ = 29
+    #TEST_5G argument
+    MUSIC = 30
+    #TEST_5G argument
+    APP = 31
 
 
 SINGLE_CHAR_TOKEN_KINDS = {
@@ -80,6 +84,8 @@ KEYWORD_KINDS = {
     'print': TokenKind.PRINT,
     'u8': TokenKind.U8,
     'test5g': TokenKind.TEST_5G,
+    'music': TokenKind.MUSIC,
+    'app': TokenKind.APP,
     'cyberspaces': TokenKind.CYBERSPACES,
     'sprint': TokenKind.SPRINT,
     'logo': TokenKind.LOGO,

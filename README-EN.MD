@@ -321,12 +321,19 @@ It's very simple, and all you need is to start a new line and type:
 
 ```c
 test5g;
+//Equivalent to the code "test5g music;"
 ```
 
-Or you can use another mode.
+Or you can use another mode:
 
 ```c
-test5g 1;
+test5g app;
+```
+
+Also you can:
+
+```c
+test5g music;
 ```
 
 Then you can start a 5G speedtest from this line. 

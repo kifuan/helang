@@ -134,12 +134,20 @@ class PrintAST(AST):
 
 
 class Test5GAST(AST):
-    def __init__(self, expr: AST):
-        self._expr = expr
-
     def evaluate(self, env: Dict[str, U8]) -> U8:
-        chars = self._expr.evaluate(env) if self._expr != 0 else self._expr
-        run_speed_test(chars)
+        run_speed_test(0)
+        return U8()
+
+
+class Test5GMusicAST(AST):
+    def evaluate(self, env: Dict[str, U8]) -> U8:
+        run_speed_test(0)
+        return U8()
+
+
+class Test5GAppAST(AST):
+    def evaluate(self, env: Dict[str, U8]) -> U8:
+        run_speed_test(1)
         return U8()
 
 

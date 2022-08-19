@@ -8,7 +8,7 @@
 <p align="center">
 <a href="https://github.com/kifuan/helang/stargazers"><img src="https://img.shields.io/github/stars/kifuan/helang.svg" alt="Stars"></a>
 <a href="https://github.com/kifuan/helang/issues"><img src="https://img.shields.io/github/issues/kifuan/helang" alt="Issues"></a>
-<a href="LICENSE"><img src="https://img.shields.io/github/license/kifuan/helang" alt="MIT License"></a>
+<a href="LICENSE"><img src="https://img.shields.io/badge/license-BUPT-yellowgreen" alt="BUPT License"></a>
 <a href="https://github.com/kifuan/helang/actions/workflows/tests.yml"><img src="https://github.com/kifuan/helang/actions/workflows/tests.yml/badge.svg" alt="Test"></a>
 </p>
 

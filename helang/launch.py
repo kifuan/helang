@@ -3,7 +3,7 @@ import traceback
 import platform
 
 from typing import Dict
-from . import quick_run_file
+from .quick_runner import quick_run_file
 from helang.lexer import Lexer
 from helang.parser import Parser
 from helang.exceptions import HeLangException

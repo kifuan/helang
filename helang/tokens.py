@@ -48,6 +48,8 @@ class TokenKind(enum.Enum):
     ADD = 22
     # *
     MUL = 23
+    # Print logo.
+    LOGO = 24
 
 
 SINGLE_CHAR_TOKEN_KINDS = {
@@ -72,6 +74,7 @@ KEYWORD_KINDS = {
     'test5g': TokenKind.TEST_5G,
     'cyberspaces': TokenKind.CYBERSPACES,
     'sprint': TokenKind.SPRINT,
+    'logo': TokenKind.LOGO,
 }
 
 

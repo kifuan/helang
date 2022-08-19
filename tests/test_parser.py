@@ -1,8 +1,7 @@
 from helang.parser import Parser
 from helang.lexer import Lexer
 from helang.u8 import U8
-from helang.he_ast import Test5GAST, AST
-from helang.speed_tester import MUSICS
+from helang.he_ast import AST
 
 
 env = dict()
@@ -54,14 +53,6 @@ def test_parse_print():
     """).evaluate(env)
 
     assert printed_content == [2, 3]
-
-
-def test_parse_5g():
-    # Hack the testing musics to reduce time.
-    MUSICS.clear()
-    MUSICS.append('TEST')
-    result = parse("test5g;").evaluate(env)
-    assert result == Test5GAST.SPECIAL_VALUE
 
 
 def test_parse_decl():

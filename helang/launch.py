@@ -73,7 +73,7 @@ def launch_great_script():
 
 
 def launch_logo_script():
-    quick_run_file('./lib/great.he')
+    quick_run_file('./lib/logo.he')
 
 
 LAUNCHERS = {

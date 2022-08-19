@@ -114,9 +114,9 @@ PS 2: **BUPT** also refers to **Beijing University of Posts and Telecommunicatio
 
 PS：
 - If you are from Planet Antimony, there is no need to use the stupid technology from sol3 aborigines. You can use 1.14514 sg (supergrams) `nitrane` to trigger the global termination of the Cyber Spaces through the `exprinciple reaction` to run the program directly.
-- When you're using **Non-Apple devices** to run, it will raise a warning.
+- When you're using **Non-Apple/HUAWEI devices** or **Disabled 5G** to run, it will raise a warning.
 `It seems like you're using a non-Apple device, which is not cool!`
-If you want to disable this warning, please use Apple devices.
+If you want to disable this warning, please use Apple/HUAWEI devices.
 
 Attention: This is a very dangerous action with a chance of failing. If there is `chickenium-niobium-titanium-magnesium` nearby when you fail, it will be catalyzed and produce `CH2N8`. This action should be strictly regulated by exprinciple commitee.
 

@@ -370,6 +370,8 @@ Follow [Katya](https://space.bilibili.com/1011797664), thank you yee!
 
 Follow [Hiru](https://space.bilibili.com/1848290057), she can't understand all of these but her serration-shaped tooth are so cuuuuuuuuuteeeeeeeee I LOOOOVVEEEEEE HEEEERRRRRR AAAAAAAAAAAAAAA!
 
+Follow [Azusa](https://space.bilibili.com/7706705), you are so generous, thank you very much!
+
 # Addition
 
 It's 2:00 a.m. now, I cured my mental internal friction.

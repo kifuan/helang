@@ -30,7 +30,7 @@
 + `HeScript`, наслаждайтесь `helang` в `JavaScript` / `Typescript`![hescript](https://github.com/Rotten-LKZ/hescript)
 + Хотите использовать helang на языке `go`? [helang-go] (https://github.com/LanceLRQ/helang-go)
 + Еще одна реализация Rust, поддерживающая работу с $! [HeRang] (https://github.com/xjrjyy/herang)
-+ Еще один typescript[HeAssembly](https://github.com/FurryR/HeAssembly)
++ Еще один typescript [HeAssembly](https://github.com/FurryR/HeAssembly)
 
 # Что это
 

@@ -11,7 +11,7 @@ MUSICS = [
     'Guts Over Fear', 'Spade'
 ]
 
-SUFFIX = [
+SUFFIXES = [
     '.mp3', '.ogg', '.flac'
 ]
 
@@ -41,7 +41,7 @@ def run_speed_test():
     total_size = 0
     for music in MUSICS:
         curr_size = random.randint(*MUSIC_SIZE_MB_RANGE)
-        file = music + random.choice(SUFFIX)
+        file = music + random.choice(SUFFIXES)
         vip_suffix = '' if music == 'ZOOD' else ' [VIP]'
         print()
         print(f'    Downloading {file}...{vip_suffix}')

@@ -1,12 +1,44 @@
+from enum import Enum
+from typing import List, Optional, Callable
 from .tokens import Token, TokenKind
 from .exceptions import BadStatementException
-from .he_ast import AST, VoidAST, ListAST, VarDefAST, VarAssignAST, VarExprAST,\
-    PrintAST, SprintAST, VarIncrementAST, U8SetAST, U8GetAST, Test5GAST,\
+from .he_ast import (
+    AST, VoidAST, ListAST, VarDefAST, VarAssignAST, VarExprAST,
+    PrintAST, SprintAST, VarIncrementAST, U8SetAST, U8GetAST, Test5GAST,
     EmptyU8InitAST, OrU8InitAST, CyberspacesAST, ArithmeticAST, ArithmeticOperator
-from typing import List, Optional, Callable
+)
+
+
+class RuledMethods:
+    """
+    Bind a list of methods with specified rule, which is Enum.
+    """
+    def __init__(self):
+        self._rules = dict()
+
+    def bind(self, rule: Enum):
+        def bind_method(method: callable):
+            if rule not in self._rules.keys():
+                self._rules[rule] = [method]
+            else:
+                self._rules[rule].append(method)
+            return method
+        return bind_method
+
+    def get(self, rule: Enum):
+        return self._rules[rule]
+
+
+class Rule(Enum):
+    ROOT = 1
+    EXPR = 2
+    # To reduce the problem of left-recursive.
+    EXPR_LEFT_RECURSIVE = 3
 
 
 class Parser:
+    _ruled_methods = RuledMethods()
+
     def __init__(self, tokens: List[Token]):
         self._tokens = tokens
         self._pos = 0
@@ -42,24 +74,12 @@ class Parser:
           ;
         :return: parsed abstract syntax tree.
         """
-        root_parsers = [
-            self._root_parse_print,
-            self._root_parse_sprint,
-            self._root_parse_var_def,
-            self._root_parse_var_declare,
-            self._root_parse_var_assign,
-            self._root_parse_var_increment,
-            self._root_parse_expr_statement,
-            self._root_parse_test_5g,
-            self._root_parse_semicolon,
-            self._root_parse_cyberspaces,
-        ]
         asts = []
         while self._pos < len(self._tokens):
-            for parser in root_parsers:
+            for parser in Parser._ruled_methods.get(Rule.ROOT):
                 saved_pos = self._pos
                 try:
-                    asts.append(parser())
+                    asts.append(parser(self))
                     break
                 except BadStatementException:
                     self._pos = saved_pos
@@ -69,23 +89,29 @@ class Parser:
         # Return the AST itself if there is only one.
         return ListAST(asts) if len(asts) != 1 else asts[0]
 
-    def _root_parse_cyberspaces(self) -> CyberspacesAST:
+    @_ruled_methods.bind(Rule.ROOT)
+    def _root_parse_print(self) -> PrintAST:
         """
-        cyberspaces: CYBERSPACES SEMICOLON;
-        :return: AST to check if you are in the Cyber Spaces.
+        print: PRINT expr SEMICOLON;
+        :return: AST for printing.
         """
-        self._expect(TokenKind.CYBERSPACES)
+        self._expect(TokenKind.PRINT)
+        expr = self._root_parse_expr()
         self._expect(TokenKind.SEMICOLON)
-        return CyberspacesAST()
+        return PrintAST(expr)
 
-    def _root_parse_semicolon(self) -> VoidAST:
+    @_ruled_methods.bind(Rule.ROOT)
+    def _root_parse_sprint(self) -> SprintAST:
         """
-        semicolon: SEMICOLON;
-        :return: void AST for sure.
+        sprint: SPRINT expr SEMICOLON;
+        :return: AST for printing strings.
         """
+        self._expect(TokenKind.SPRINT)
+        expr = self._root_parse_expr()
         self._expect(TokenKind.SEMICOLON)
-        return VoidAST()
+        return SprintAST(expr)
 
+    @_ruled_methods.bind(Rule.ROOT)
     def _root_parse_var_def(self) -> VarDefAST:
         """
         var_def: U8 IDENT ASSIGN expr SEMICOLON;
@@ -98,6 +124,7 @@ class Parser:
         self._expect(TokenKind.SEMICOLON)
         return VarDefAST(var_ident.content, val)
 
+    @_ruled_methods.bind(Rule.ROOT)
     def _root_parse_var_declare(self) -> VarDefAST:
         """
         var_declare: U8 IDENT SEMICOLON;
@@ -108,6 +135,7 @@ class Parser:
         self._expect(TokenKind.SEMICOLON)
         return VarDefAST(var_ident.content, VoidAST())
 
+    @_ruled_methods.bind(Rule.ROOT)
     def _root_parse_var_assign(self) -> VarAssignAST:
         """
         var_assign: IDENT ASSIGN expr SEMICOLON;
@@ -119,26 +147,7 @@ class Parser:
         self._expect(TokenKind.SEMICOLON)
         return VarAssignAST(ident.content, expr)
 
-    def _root_parse_print(self) -> PrintAST:
-        """
-        print: PRINT expr SEMICOLON;
-        :return: AST for printing.
-        """
-        self._expect(TokenKind.PRINT)
-        expr = self._root_parse_expr()
-        self._expect(TokenKind.SEMICOLON)
-        return PrintAST(expr)
-
-    def _root_parse_sprint(self) -> SprintAST:
-        """
-        sprint: SPRINT expr SEMICOLON;
-        :return: AST for printing strings.
-        """
-        self._expect(TokenKind.SPRINT)
-        expr = self._root_parse_expr()
-        self._expect(TokenKind.SEMICOLON)
-        return SprintAST(expr)
-
+    @_ruled_methods.bind(Rule.ROOT)
     def _root_parse_var_increment(self) -> VarIncrementAST:
         """
         var_increment: IDENT INCREMENT SEMICOLON;
@@ -149,15 +158,7 @@ class Parser:
         self._expect(TokenKind.SEMICOLON)
         return VarIncrementAST(ident.content)
 
-    def _root_parse_test_5g(self) -> Test5GAST:
-        """
-        test_5g: TEST_5G SEMICOLON;
-        :return: AST for testing 5G.
-        """
-        self._expect(TokenKind.TEST_5G)
-        self._expect(TokenKind.SEMICOLON)
-        return Test5GAST()
-
+    @_ruled_methods.bind(Rule.ROOT)
     def _root_parse_expr_statement(self) -> AST:
         """
         expr_statement: expr SEMICOLON;
@@ -167,6 +168,36 @@ class Parser:
         self._expect(TokenKind.SEMICOLON)
         return expr
 
+    @_ruled_methods.bind(Rule.ROOT)
+    def _root_parse_test_5g(self) -> Test5GAST:
+        """
+        test_5g: TEST_5G SEMICOLON;
+        :return: AST for testing 5G.
+        """
+        self._expect(TokenKind.TEST_5G)
+        self._expect(TokenKind.SEMICOLON)
+        return Test5GAST()
+
+    @_ruled_methods.bind(Rule.ROOT)
+    def _root_parse_cyberspaces(self) -> CyberspacesAST:
+        """
+        cyberspaces: CYBERSPACES SEMICOLON;
+        :return: AST to check if you are in the Cyber Spaces.
+        """
+        self._expect(TokenKind.CYBERSPACES)
+        self._expect(TokenKind.SEMICOLON)
+        return CyberspacesAST()
+
+    @_ruled_methods.bind(Rule.ROOT)
+    def _root_parse_semicolon(self) -> VoidAST:
+        """
+        semicolon: SEMICOLON;
+        :return: void AST for sure.
+        """
+        self._expect(TokenKind.SEMICOLON)
+        return VoidAST()
+
+    @_ruled_methods.bind(Rule.ROOT)
     def _root_parse_expr(self) -> AST:
         """
         expr
@@ -176,20 +207,16 @@ class Parser:
           ;
         :return: AST for current expression.
         """
-        parsers = [
-            self._expr_parse_empty_u8,
-            self._expr_parse_or_u8,
-            self._expr_parse_var
-        ]
-        for parser in parsers:
+        for parser in Parser._ruled_methods.get(Rule.EXPR):
             saved_pos = self._pos
             try:
-                prev = parser()
+                prev = parser(self)
                 return self._left_recur_expr_parse(prev)
             except BadStatementException:
                 self._pos = saved_pos
         raise BadStatementException('cannot parse expressions')
 
+    @_ruled_methods.bind(Rule.EXPR)
     def _expr_parse_empty_u8(self) -> EmptyU8InitAST:
         """
         empty_u8: LS NUMBER RS;
@@ -200,6 +227,7 @@ class Parser:
         self._expect(TokenKind.RS)
         return EmptyU8InitAST(int(length.content))
 
+    @_ruled_methods.bind(Rule.EXPR)
     def _expr_parse_or_u8(self) -> OrU8InitAST:
         """
         or_u8
@@ -217,6 +245,7 @@ class Parser:
 
         return OrU8InitAST(int(first.content), self._expr_parse_or_u8())
 
+    @_ruled_methods.bind(Rule.EXPR)
     def _expr_parse_var(self) -> VarExprAST:
         """
         var: IDENT;
@@ -237,22 +266,17 @@ class Parser:
         :param prev:
         :return:
         """
-        parsers: List[Callable[[AST], AST]] = [
-            self._left_recur_expr_parse_u8_set,
-            self._left_recur_expr_parse_u8_get,
-            self._left_recur_expr_parse_sub,
-            self._left_recur_expr_parse_add,
-        ]
-        for parser in parsers:
+        for parser in Parser._ruled_methods.get(Rule.EXPR_LEFT_RECURSIVE):
             saved_pos = self._pos
             try:
-                prev_expr = parser(prev)
+                prev_expr = parser(self, prev)
                 return self._left_recur_expr_parse(prev_expr)
             except BadStatementException:
                 self._pos = saved_pos
         # Tried all left-recursive grammars, none has matched.
         return prev
 
+    @_ruled_methods.bind(Rule.EXPR_LEFT_RECURSIVE)
     def _left_recur_expr_parse_u8_set(self, list_expr: AST) -> U8SetAST:
         self._expect(TokenKind.LS)
         subscript_expr = self._root_parse_expr()
@@ -261,17 +285,20 @@ class Parser:
         value_expr = self._root_parse_expr()
         return U8SetAST(list_expr, subscript_expr, value_expr)
 
+    @_ruled_methods.bind(Rule.EXPR_LEFT_RECURSIVE)
     def _left_recur_expr_parse_u8_get(self, list_expr: AST) -> U8GetAST:
         self._expect(TokenKind.LS)
         subscript_expr = self._root_parse_expr()
         self._expect(TokenKind.RS)
         return U8GetAST(list_expr, subscript_expr)
 
+    @_ruled_methods.bind(Rule.EXPR_LEFT_RECURSIVE)
     def _left_recur_expr_parse_sub(self, first: AST) -> ArithmeticAST:
         self._expect(TokenKind.SUB)
         second = self._root_parse_expr()
         return ArithmeticAST(first, second, ArithmeticOperator.SUB)
 
+    @_ruled_methods.bind(Rule.EXPR_LEFT_RECURSIVE)
     def _left_recur_expr_parse_add(self, first: AST) -> ArithmeticAST:
         self._expect(TokenKind.ADD)
         second = self._root_parse_expr()

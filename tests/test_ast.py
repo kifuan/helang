@@ -1,4 +1,7 @@
-from helang.he_ast import VarExprAST, U8GetAST, U8SetAST, ArithmeticAST, ArithmeticOperator, OrU8InitAST
+from helang.he_ast import (
+    VarExprAST, U8GetAST, U8SetAST, ArithmeticAST,
+    ArithmeticOperator, OrU8InitAST
+)
 from helang.u8 import U8
 
 

@@ -1,6 +1,8 @@
 from typing import Optional, List, Union
-from .exceptions import CyberArithmeticException, CyberU8ComparingException, \
+from .exceptions import (
+    CyberArithmeticException, CyberU8ComparingException,
     CyberNotSupportedException
+)
 
 
 class U8:

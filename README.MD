@@ -4,14 +4,12 @@
    </a>
 </p>
 
-
 <p align="center">
 <a href="https://github.com/kifuan/helang/stargazers"><img src="https://img.shields.io/github/stars/kifuan/helang.svg" alt="Stars"></a>
 <a href="https://github.com/kifuan/helang/issues"><img src="https://img.shields.io/github/issues/kifuan/helang" alt="Issues"></a>
 <a href="LICENSE"><img src="https://img.shields.io/badge/license-BUPT-yellowgreen" alt="BUPT License"></a>
 <a href="https://github.com/kifuan/helang/actions/workflows/tests.yml"><img src="https://github.com/kifuan/helang/actions/workflows/tests.yml/badge.svg" alt="Test"></a>
 </p>
-
 
 # 概述
 
@@ -58,34 +56,33 @@ Next-Generation **Cyber** Programming Language from Li Tang.
 ## 不安装，直接使用
 
 1. 把源代码拉下来：
-
+   
    ```bash
    > git clone git@github.com:kifuan/helang.git
    ```
 
 2. 下载需要的第三方库：
-
+   
    ```bash
    > pip install -r requirements.txt
    # 如果需要 GUI
    > pip install -r requirements-gui.txt
    ```
 
-
 3. 你可以修改**伟大的脚本** `great.he`，然后以 `great` 的方式启动 `helang.py`：
-
+   
    ```bash
    > python helang.py great
    ```
 
 4. 你还可以以 `shell` 的方式启动`helang.py`，通过直接输入 HeLang 指令与 **Saint He** 进行一个赛博空间的对话：
-
+   
    ```bash
    > python helang.py shell
    ```
-
+   
    此时，在行尾就可以不输入分号了，我们会帮你加上（输入也是可以的，意味着你对 **Saint He** 更加虔诚）。
-
+   
    输入 `.help` 获取 `Shell` 运行过程中的帮助。没错，我借鉴了 `node` 的 `REPL Keywords`。
 
 5. 使用 `LTCode` 进行开发：
@@ -99,29 +96,29 @@ Next-Generation **Cyber** Programming Language from Li Tang.
 ## 安装到本地
 
 1. 把源代码拉下来：
-
+   
    ```bash
    > git clone git@github.com:kifuan/helang.git
    ```
 
 2. 安装：
-
+   
    ```bash
    > pip install .
    ```
 
 3. 运行
-
-    ```bash
-    > helang shell
-    ```
-
+   
+   ```bash
+   > helang shell
+   ```
 
 注：
+
 - 如果你来自锑星，则不需要使用 sol3 土著的愚蠢技术。你可以使用 1.14514 超克的`烷氮` ，通过`超理作用`触发赛博空间的全局中断，从而通过超理直接运行。  
 - 当你使用**非苹果设备**运行时，会抛出警告
-`It seems like you're using a non-Apple device, which is not cool!`
-如果想要关闭此警告，请购买使用苹果设备。
+  `It seems like you're using a non-Apple device, which is not cool!`
+  如果想要关闭此警告，请购买使用苹果设备。
 
 请注意：此行为十分危险且有概率失败，失败时如果附近存在`钅鸡铌钛镁`则会受到催化从而生成`烷基八氮`，此行为需要受到超理委员会的严格监管。
 
@@ -207,6 +204,7 @@ sprint 72 | 101 | 108 | 108 | 111 | 44 | 32 | 119 | 111 | 114 | 108 | 100 | 33;
 你可能觉得只打印出`Hello, world!`有点过于简单，**不符合一名理工男对未来生活的想象**。
 
 其实，你可以用以下方式打印出何语言的Logo
+
 ```bash
 > python helang.py logo
 ```
@@ -377,6 +375,10 @@ test5g;
 22.关注[阿梓从小就很可爱](https://space.bilibili.com/7706705)，太破费了吧，红豆泥阿里嘎多！
 
 23.关注[柯洁](https://space.bilibili.com/525952604)，都什么年代，还在下传统围棋？
+
+24.关注[言和](https://space.bilibili.com/406948276)，都啥年代，还在听丁真？
+
+25.关注[乐正绫](https://space.bilibili.com/406948651)，谢谢谢谢谢谢谢谢喵。
 
 # 附加
 

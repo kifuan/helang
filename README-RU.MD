@@ -24,12 +24,13 @@
 
 отличная работа！любовь от **Cyber Spaces**！
 
-+ HeLang： `Kotlin` скрипт [HeLangKotlinScriptImpl](https://github.com/shaokeyibb/HeLangKotlinScriptImpl) --- [Принцип реализации](https://my.minecraft.kim/tech/2022/08/18/post-740/)
-+ HeLang： версия `C#` [HeLangSharp](https://github.com/Cyl18/HeLangSharp)
-+ `ArchLinux` https://github.com/BenderBlog/Practise-Programs/tree/main/Helang-PKGBUILD
-+ `HeScript`, наслаждайтесь `helang` в `JavaScript` / `Typescript`![hescript](https://github.com/Rotten-LKZ/hescript)
-+ Хотите использовать helang на языке `go`? [helang-go] (https://github.com/LanceLRQ/helang-go)
-+ Еще одна реализация `Rust`, поддерживающая работу с $! [HeRang] (https://github.com/xjrjyy/herang)
++ HeLang: `Kotlin` скрипт [HeLangKotlinScriptImpl](https://github.com/shaokeyibb/HeLangKotlinScriptImpl) --- [Принцип реализации](https://my.minecraft.kim/tech/2022/08/18/post-740/)
++ HeLang: версия `C#` [HeLangSharp](https://github.com/Cyl18/HeLangSharp)
++ Почему бы не переписать helang на Rust? [helang-rs](https://github.com/imtsuki/helang-rs)
++ `ArchLinux`https://github.com/BenderBlog/Practise-Programs/tree/main/Helang-PKGBUILD
++ `HeScript`, наслаждайтесь `helang` в `JavaScript` / `Typescript` [hescript](https://github.com/Rotten-LKZ/hescript)
++ Хотите использовать helang на языке `go`? [helang-go](https://github.com/LanceLRQ/helang-go)
++ Еще одна реализация `Rust`, поддерживающая работу с $! [HeRang](https://github.com/xjrjyy/herang)
 + Еще один `typescript` [HeAssembly](https://github.com/FurryR/HeAssembly)
 
 # Что это
@@ -47,7 +48,7 @@
 
 ## Без установки
 
-1. клон исходника：
+1. клон исходника:
 
    ```bash
    > git clone git@github.com:kifuan/helang.git
@@ -86,13 +87,13 @@
 
 ## Установка
 
-1. Клон исходника：
+1. Клон исходника:
 
    ```bash
    > git clone git@github.com:kifuan/helang.git
    ```
 
-2. Установка：
+2. Установка:
 
    ```bash
    > pip install .

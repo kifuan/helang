@@ -1,5 +1,6 @@
 import sys
 import traceback
+import platform
 
 from typing import Dict
 from helang.lexer import Lexer
@@ -8,7 +9,6 @@ from helang.exceptions import HeLangException
 from helang.u8 import U8
 from helang.lt_code.window import LTCodeWindow
 from PySide6.QtWidgets import QApplication
-
 
 SHELL_HELP = """
 .help  Print this help message
@@ -87,11 +87,13 @@ def main():
     Main function
     """
     target = sys.argv[-1]
+
     if target not in LAUNCHERS.keys():
         legal_targets = ', '.join(LAUNCHERS.keys())
         print(f'Invalid launch target {target}, expected target: {legal_targets}.')
         sys.exit(-1)
-
+    if platform.system() != "Darwin":
+        print("WARNING:It seems like you're using a non-Apple device, which is not cool!")
     LAUNCHERS[target]()
 
 

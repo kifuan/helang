@@ -4,7 +4,6 @@
    </a>
 </p>
 
-
 <p align="center">
 <a href="https://github.com/kifuan/helang/stargazers"><img src="https://img.shields.io/github/stars/kifuan/helang.svg" alt="Stars"></a>
 <a href="https://github.com/kifuan/helang/issues"><img src="https://img.shields.io/github/issues/kifuan/helang" alt="Issues"></a>
@@ -36,7 +35,7 @@ Very good works! Love from **Cyber Spaces**!
 # Description
 
 > Nowadays in the 21st century, `Helang`, `Jvav` and `C--` have become the three irreplaceable programming languages.
->
+> 
 > Saint He. (2202). *A Brief **He**story of Cyber Programming Languages*. Lithang Computer Science and Technology Press.
 
 Next generation cyber programming language, born in the **E-SMOKER** town, Cyber Lithang.
@@ -54,13 +53,13 @@ PS 2: **BUPT** also refers to **Beijing University of Posts and Telecommunicatio
 ## Use without installation
 
 1. Pull the source code:
-
+   
    ```bash
    > git clone git@github.com:kifuan/helang.git
    ```
 
 2. Install third-party libraries:
-
+   
    ```bash
    > pip install -r requirements.txt
    # if need GUI
@@ -68,19 +67,19 @@ PS 2: **BUPT** also refers to **Beijing University of Posts and Telecommunicatio
    ```
 
 3. Modify **The Great Script** `great.he`, then run `helang.py` in a `great` way：
-
+   
    ```bash
    > python helang.py great
    ```
 
 4. You can also launch `helang.py` in `shell` mode, to communicate with **Saint He** in HeLang in Cyber Spaces.
-
+   
    ```bash
    > python helang.py shell
    ```
-
+   
    Now, there's no need to append semicolons to the line end: we will do that for you. (Of course, you can choose to use semicolons to show your loyalty to **Saint He**)
-
+   
    Type `.help` to get the runtime help. Yeah, a copy-paste from `node`'s `REPL Keywords`.
 
 5. Develop with `LTCode`：
@@ -90,33 +89,33 @@ PS 2: **BUPT** also refers to **Beijing University of Posts and Telecommunicatio
    ```
    
    WIP. New features are planned.
-   
+
 ## Install locally
 
 1. Pull the source code：
-
+   
    ```bash
    > git clone git@github.com:kifuan/helang.git
    ```
 
 2. Install：
-
+   
    ```bash
    > pip install .
    ```
 
 3. Run
-
+   
    ```bash
    > helang shell
    ```
 
-
 PS：
+
 - If you are from Planet Antimony, there is no need to use the stupid technology from sol3 aborigines. You can use 1.14514 sg (supergrams) `nitrane` to trigger the global termination of the Cyber Spaces through the `exprinciple reaction` to run the program directly.
-- When you're using **Non-Apple devices** to run, it will raise a warning.
-`It seems like you're using a non-Apple device, which is not cool!`
-If you want to disable this warning, please use Apple devices.
+- When you're using **Non-Apple/HUAWEI devices** or **Disabled 5G** to run, it will raise a warning.
+  `It seems like you're using a non-Apple device, which is not cool!`
+  If you want to disable this warning, please use Apple devices.
 
 Attention: This is a very dangerous action with a chance of failing. If there is `chickenium-niobium-titanium-magnesium` nearby when you fail, it will be catalyzed and produce `CH2N8`. This action should be strictly regulated by exprinciple commitee.
 
@@ -125,7 +124,6 @@ Attention: This is a very dangerous action with a chance of failing. If there is
 **Saint He** noted that every type is `u8`. What does that mean? Reverse it so we get `8u` (Ba You). Does Saint He use Tieba?
 
 Besides, `u8` is similar to `v8` in shape. So follow [Ace Taffy](https://space.bilibili.com/1265680561) nya, follow Ace Taffy thank you nya.
-
 
 As you can see, we use `|`, **the bitwise or**, to replace the traditional array. **Why are you still using traditional arrays nowadays?** 
 
@@ -203,6 +201,7 @@ By decreasing readability, we gain exponential performance increase. Credits to 
 You may think it too easy to print only `Hello, world!` . After all, **it doesn't meet with science geeks' imagination for a better future**.
 
 Actually, you can print HeLang's logo by:
+
 ```bash
 > python helang.py logo
 ```
@@ -302,7 +301,6 @@ c = 1 | 2 | 3;
 ```
 
 As a high-tech language, we need to be strict and precise.
-
 
 # Check If You Are in Cyber Spaces
 

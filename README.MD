@@ -116,7 +116,7 @@ Next-Generation **Cyber** Programming Language from Li Tang.
 注：
 
 - 如果你来自锑星，则不需要使用 sol3 土著的愚蠢技术。你可以使用 1.14514 超克的`烷氮` ，通过`超理作用`触发赛博空间的全局中断，从而通过超理直接运行。  
-- 当你使用**非苹果设备**运行时，会抛出警告
+- 当你使用**非苹果/华为设备或关闭5G**运行时，会抛出警告
   `It seems like you're using a non-Apple device, which is not cool!`
   如果想要关闭此警告，请购买使用苹果设备。
 

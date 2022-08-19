@@ -34,6 +34,9 @@ class U8:
         a += [0] * (expected_length - len(a))
         return U8(sum(a[i] * b[i] for i in range(expected_length)))
 
+    def __neg__(self):
+        return U8([-v for v in self.value])
+
     def increment(self):
         self.value = [v+1 for v in self.value]
 
@@ -95,7 +98,7 @@ class U8:
         # Set the elements one by one.
         for subscript in subscripts.value:
             if subscript == 0:
-                raise CyberNotSupportedException('subscript 0 is designed for setting all elements'
+                raise CyberNotSupportedException('subscript 0 is designed for setting all elements,'
                                                  'you should write like array[0] = 10')
             self.value[subscript-1] = val
 

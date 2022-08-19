@@ -29,6 +29,7 @@ Next-Generation **Cyber** Programming Language from Li Tang.
 
 + 何语言 `Kotlin` 脚本版 [HeLangKotlinScriptImpl](https://github.com/shaokeyibb/HeLangKotlinScriptImpl) --- [实现原理](https://my.minecraft.kim/tech/2022/08/18/post-740/)
 + 何语言 `C#` 版 [HeLangSharp](https://github.com/Cyl18/HeLangSharp)
++ 为什么不用 Rust 重写呢？ [helang-rs](https://github.com/imtsuki/helang-rs)
 + 登陆 `ArchLinux` https://github.com/BenderBlog/Practise-Programs/tree/main/Helang-PKGBUILD
 + L! T! C! (etc.)
 
@@ -193,6 +194,17 @@ sprint 72 | 101 | 108 | 108 | 111 | 44 | 32 | 119 | 111 | 114 | 108 | 100 | 33;
 由于对效率的极端苛刻要求，我们使用字符在 UTF-8 中对应的数字来表示这个字符。
 
 通过降低可读性，换来了指数级的性能提升，不愧赛博世界的唯一真神。
+
+# 打印Logo
+
+你可能觉得只打印出`Hello, world!`有点过于简单，**不符合一名理工男对未来生活的想象**。
+
+其实，你可以用以下方式打印出何语言的Logo
+```bash
+> python helang.py logo
+```
+
+通过查看源文件 `logo.he`，你会发现代码主要由**数字**构成，在赛博世界里，仅仅通过简单的数字就能显示复杂的图案，**不觉得这很酷吗**！
 
 # 自增运算
 

@@ -11,7 +11,7 @@ from .he_ast import (
 
 class RuledMethods:
     """
-    Bind a list of methods with specified rule, which is Enum.
+    Bind a list of methods with specified rules, which are Enums.
     """
     def __init__(self):
         self._rules = dict()

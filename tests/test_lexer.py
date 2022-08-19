@@ -12,6 +12,7 @@ OPERATORS = """
 a++
 a+12
 a-b+22
+a*b*33
 """
 
 
@@ -45,7 +46,13 @@ def test_operators():
         Token('-', TokenKind.SUB),
         Token('b', TokenKind.IDENT),
         Token('+', TokenKind.ADD),
-        Token('22', TokenKind.NUMBER)
+        Token('22', TokenKind.NUMBER),
+
+        Token('a', TokenKind.IDENT),
+        Token('*', TokenKind.MUL),
+        Token('b', TokenKind.IDENT),
+        Token('*', TokenKind.MUL),
+        Token('33', TokenKind.NUMBER),
     ]
 
     assert tokens == expected

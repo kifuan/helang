@@ -15,6 +15,9 @@ b_c = [0, 4, 5]
 a_add_b = [7, 9, 13]
 a_add_c = [7, 5, 8]
 
+a_mul_b = [70]
+a_mul_c = [10]
+
 
 def test_u8_compare():
     assert a == a
@@ -46,3 +49,9 @@ def test_u8_set_all():
     u8[U8(0)] = U8(10)
 
     assert u8 == [10, 10, 10]
+
+
+def test_u8_mul():
+    assert a*b == a_mul_b
+    assert a*c == a_mul_c
+    assert a*c == c*a

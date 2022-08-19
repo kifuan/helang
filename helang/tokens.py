@@ -46,6 +46,8 @@ class TokenKind(enum.Enum):
     CYBERSPACES = 21
     # +
     ADD = 22
+    # *
+    MUL = 23
 
 
 SINGLE_CHAR_TOKEN_KINDS = {
@@ -61,6 +63,7 @@ SINGLE_CHAR_TOKEN_KINDS = {
     '=': TokenKind.ASSIGN,
     '<': TokenKind.LT,
     '-': TokenKind.SUB,
+    '*': TokenKind.MUL,
 }
 
 KEYWORD_KINDS = {

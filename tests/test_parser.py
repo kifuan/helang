@@ -121,3 +121,13 @@ def test_add():
     assert env['a_add_b'] == [3, 4, 5]
     assert env['sum'] == [5, 7, 9]
     assert env['two'] == [2]
+
+
+def test_mul():
+    parse("""
+        u8 a = 1 | 2;
+        u8 b = 2 | 3;
+        u8 c = a * b;
+    """).evaluate(env)
+
+    assert env['c'] == [8]

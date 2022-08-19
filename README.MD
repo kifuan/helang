@@ -109,7 +109,11 @@ Next-Generation **Cyber** Programming Language from Li Tang.
     ```
 
 
-注：如果你来自锑星，则不需要使用 sol3 土著的愚蠢技术。你可以使用 1.14514 超克的`烷氮` ，通过`超理作用`触发赛博空间的全局中断，从而通过超理直接运行。  
+注：
+- 如果你来自锑星，则不需要使用 sol3 土著的愚蠢技术。你可以使用 1.14514 超克的`烷氮` ，通过`超理作用`触发赛博空间的全局中断，从而通过超理直接运行。  
+- 当你使用**非苹果设备**运行时，会抛出警告
+`It seems like you're using a non-Apple device, which is not cool!`
+如果想要关闭此警告，请购买使用苹果设备。
 
 请注意：此行为十分危险且有概率失败，失败时如果附近存在`钅鸡铌钛镁`则会受到催化从而生成`烷基八氮`，此行为需要受到超理委员会的严格监管。
 
@@ -318,6 +322,12 @@ test5g;
 )！傻气溢出的海洋（屑）女仆（洋葱）和喜欢水濑祈的可爱唱见 期待木口回旋捏 另外请支持阿夸主演的[galgame](https://shop.hololivepro.com/products/aquarium_hololive_official_edition)谢谢！
 
 关注[原神](https://space.bilibili.com/401742377)，玩《原神》比看赛博丁真好多了！
+
+关注[唐九夏还想再躺一下](https://space.bilibili.com/1219196749)，谢谢爹!
+
+关注[吉诺儿kino](https://space.bilibili.com/1383815813)，守护全世界最抽象的吉芭公主！
+
+关注[卡缇娅也不知道鸭](https://space.bilibili.com/1011797664)，谢谢鸭！
 
 # 附加
 

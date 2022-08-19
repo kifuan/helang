@@ -25,6 +25,15 @@ class U8:
     def __repr__(self):
         return str(self)
 
+    def __mul__(self, other: 'U8'):
+        a, b = self.value, other.value
+        # Makes a the shorter list
+        if len(a) > len(b):
+            a, b = b, a
+        expected_length = len(b)
+        a += [0] * (expected_length - len(a))
+        return U8(sum(a[i] * b[i] for i in range(expected_length)))
+
     def increment(self):
         self.value = [v+1 for v in self.value]
 

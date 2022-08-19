@@ -6,6 +6,7 @@ from .u8 import U8
 from .check_cyberspaces import check_cyberspaces
 from .speed_tester import run_speed_test
 from .exceptions import CyberNameException
+from .tokens import Token, TokenKind
 
 
 class AST:
@@ -162,6 +163,16 @@ class CyberspacesAST(AST):
 class ArithmeticOperator(enum.Enum):
     ADD = 1
     SUB = 2
+    MUL = 3
+
+    @classmethod
+    def from_token(cls, token: Token):
+        operators = {
+            TokenKind.ADD: cls.ADD,
+            TokenKind.SUB: cls.SUB,
+            TokenKind.MUL: cls.MUL
+        }
+        return operators[token.kind]
 
 
 def _operate(a: U8, b: U8, op: ArithmeticOperator):
@@ -169,6 +180,8 @@ def _operate(a: U8, b: U8, op: ArithmeticOperator):
         return a - b
     elif op == ArithmeticOperator.ADD:
         return a + b
+    elif op == ArithmeticOperator.MUL:
+        return a * b
     else:
         raise NotImplementedError()
 

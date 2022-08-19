@@ -196,6 +196,25 @@ To strictly optimize the performance, We use UTF-8 decimals instead of character
 
 By decreasing readability, we gain exponential performance increase. Credits to the real god in the cyber world.
 
+# Print Logo
+
+You may think it too easy to print only `Hello, world!` . After all, **it doesn't meet with science geeks' imagination for a better future**.
+
+Actually, you can print HeLang's logo by:
+```bash
+> python helang.py logo
+```
+
+By looking at the source `lib/logo.he`, you will find the code is mostly **numbers**. In Cyber Spaces, complex images can be displayed with simple numbers. **Isn't that cool?**
+
+Besides, you can also print `HeLang Logo` in HeLang code:
+
+```c
+logo;
+```
+
+COOL.
+
 # Increment
 
 We noticed that increment (`++`) also appeared in the code by **Saint He**.

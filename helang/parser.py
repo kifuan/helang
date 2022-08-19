@@ -191,7 +191,7 @@ class Parser:
         :return: AST for testing 5G.
         """
         self._expect(TokenKind.TEST_5G)
-        self._expect(TokenKind.MUSIC)
+        self._expect(TokenKind.T5G_MUSIC)
         self._expect(TokenKind.SEMICOLON)
         return Test5GMusicAST()
 
@@ -202,7 +202,7 @@ class Parser:
         :return: AST for testing 5G.
         """
         self._expect(TokenKind.TEST_5G)
-        self._expect(TokenKind.APP)
+        self._expect(TokenKind.T5G_APP)
         self._expect(TokenKind.SEMICOLON)
         return Test5GAppAST()
 

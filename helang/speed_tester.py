@@ -49,7 +49,7 @@ Location | BUPT Xitucheng Campus
 
 
 def run_speed_test(argument):
-    if argument==0:
+    if argument == 0:
         print('Cyber DJ is downloading apps via 5G...')
         random.shuffle(MUSICS)
         total_size = 0
@@ -67,7 +67,7 @@ def run_speed_test(argument):
         print()
         print(SUMMARY_STRING.format(total_size, len(MUSICS), total_size, len(MUSICS)))
 
-    elif argument==1:
+    elif argument == 1:
         print('Cyber DJ is downloading apps via 5G...')
         total_size = 0
         for app in APPS:

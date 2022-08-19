@@ -34,6 +34,9 @@ class U8:
         a += [0] * (expected_length - len(a))
         return U8(sum(a[i] * b[i] for i in range(expected_length)))
 
+    def __neg__(self):
+        return U8([-v for v in self.value])
+
     def increment(self):
         self.value = [v+1 for v in self.value]
 

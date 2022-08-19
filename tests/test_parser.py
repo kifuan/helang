@@ -131,3 +131,14 @@ def test_mul():
     """).evaluate(env)
 
     assert env['c'] == [8]
+
+
+def test_mixed_expr():
+    parse("""
+        u8 a = 1 | 2;
+        u8 b = 3 | 4;
+        u8 c = 5 | 8;
+        u8 result = a + b * c + b;
+    """).evaluate(env)
+
+    assert env['result'] == [51, 53]

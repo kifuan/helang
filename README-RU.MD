@@ -56,7 +56,7 @@
 
    ```bash
    > pip install -r requirements.txt
-   # if need GUI
+   # если вам нужен графический интерфейс
    > pip install -r requirements-gui.txt
    ```
 
@@ -69,7 +69,7 @@
 4. Вы также можете запустить `helang.py` как `оболочку` и вести диалог в киберпространстве с **Saint He**, напрямую введя команду HeLang:
 
    ```bash
-   > python helang.py shell
+   > python helang.py shell 
    ```
 
    На этом этапе вы можете не печатать точку с запятой в конце строки, мы добавим ее за вас (ввод тоже возможен, значит вы более религиозны к **Saint He**).
@@ -245,45 +245,48 @@ test5g;
 
 # Итоги
 
-Подпишитесь на [Yongchu Taffy](https://space.bilibili.com/1265680561), подпишитесь на Yongchu Taffy, спасибо.
+1.Подпишитесь на [Yongchu Taffy](https://space.bilibili.com/1265680561), подпишитесь на Yongchu Taffy, спасибо.
 
-Подпишитесь на [Mao Lei NyaRu_Official](https://space.bilibili.com/697091119) Спасибо, мяу, я хочу есть китайский рис мяу.
+2.Подпишитесь на [Mao Lei NyaRu_Official](https://space.bilibili.com/697091119) Спасибо, мяу, я хочу есть китайский рис мяу.
 
-Подпишитесь на [Star Pupil_Official](https://space.bilibili.com/401315430), чтобы получить йо-йо-мей!
+3.Подпишитесь на [Star Pupil_Official](https://space.bilibili.com/401315430), чтобы получить йо-йо-мей!
 
-Подписывайтесь на [Diana](https://space.bilibili.com/672328094), и вы останетесь довольны! 
+4.Подписывайтесь на [Diana](https://space.bilibili.com/672328094), и вы останетесь довольны! 
 
-Подписывайтесь на [Ava](https://space.bilibili.com/672346917), подписывайтесь на Xiang Wan, еще не поздно!
+5.Подписывайтесь на [Ava](https://space.bilibili.com/672346917), подписывайтесь на Xiang Wan, еще не поздно!
 
-Подписывайтесь на [Eileen](https://space.bilibili.com/672342685), подписывайтесь на Nailin,спасибо!
+6.Подписывайтесь на [Eileen](https://space.bilibili.com/672342685), подписывайтесь на Nailin,спасибо!
 
-Подписывайтесь на [Bella](https://space.bilibili.com/672353429), подписывайтесь на Bella Му, спасибо Му!
+7.Подписывайтесь на [Bella](https://space.bilibili.com/672353429), подписывайтесь на Bella Му, спасибо Му!
 
-Подпишитесь на [Adhesion TechnologyOfficial](https://space.bilibili.com/248582596)
+8.Не подписывайтесь на [Официальный сайт East Snow Lotus] (https://space.bilibili.com/1437582453/). Вы не можете позволить Либэнь Ви есть китайский рис.
 
-Подписывайтесь на [HiiroVTuber](https://space.bilibili.com/508963009), а не на розовое кошку весом 425 кг!
+9.Подпишитесь на [Adhesion TechnologyOfficial](https://space.bilibili.com/248582596)
 
-Подпишитесь на [Luzao GOGO](https://space.bilibili.com/1669777785/)! Подписаться на Лу Зао Спасибо, Ван!
+10.Подписывайтесь на [HiiroVTuber](https://space.bilibili.com/508963009), а не на розовое кошку весом 425 кг!
 
-Подпишитесь на [AIChannel China Trip Love](https://space.bilibili.com/484322035)! Супер милый Super AI Cyber ​​Ding !
+11.Подпишитесь на [Luzao GOGO](https://space.bilibili.com/1669777785/)! Подписаться на Лу Зао Спасибо, Ван!
 
-Подпишитесь на [Luo Tianyi](https://space.bilibili.com/36081646), Кибер Дин Жень действительно больше похож на человеческую певицу Ви!
+12.Подпишитесь на [AIChannel China Trip Love](https://space.bilibili.com/484322035)! Супер милый Super AI Cyber ​​Ding !
 
-Подписывайтесь на [Традиционный Дин Жень](https://space.bilibili.com/1463028352), в каком возрасте еще обращать внимание на Кибер Дин Жень, почему бы и вам не поностальгировать!
+13.Подпишитесь на [Luo Tianyi](https://space.bilibili.com/36081646), Кибер Дин Жень действительно больше похож на человеческую певицу Ви!
 
-Подпишитесь на [Minato Acqua](https://space.bilibili.com/375504219) и [Ms rinco](https://www.nicovideo.jp/user/45194653)
+14.Подписывайтесь на [Традиционный Дин Жень](https://space.bilibili.com/1463028352), в каком возрасте еще обращать внимание на Кибер Дин Жень, почему бы и вам не поностальгировать!
+
+15.Подпишитесь на [Minato Acqua](https://space.bilibili.com/375504219) и [Ms rinco](https://www.nicovideo.jp/user/45194653)
 )! Глупый переполненный океан (крошки) горничная (луковица) и милое пение, кто любит Минасе Ини, с нетерпением жду окольного щипка Кигути. Также, пожалуйста, поддержите [galgame] (https://shop.hololivepro.com/products/aquarium_hololive_official_edition) спасибо!
 
-Подписывайтесь на [Genshin](https://space.bilibili.com/401742377), играть в Genshin намного лучше, чем смотреть Кибер Дин Жень!
+16.Подписывайтесь на [Genshin](https://space.bilibili.com/401742377), играть в Genshin намного лучше, чем смотреть Кибер Дин Жень!
 Выполните 1 и поблагодарите папу!
 
-Подпишитесь [Тан Цзюся все еще хочет лечь] (https://space.bilibili.com/1219196749), спасибо, папа!
+17.Подпишитесь [Тан Цзюся все еще хочет лечь] (https://space.bilibili.com/1219196749), спасибо, папа!
 
-Подписывайтесь на [Kinoer Kino](https://space.bilibili.com/1383815813), защищайте самую абстрактную принцессу Джибу в мире!
+18.Подписывайтесь на [Kinoer Kino](https://space.bilibili.com/1383815813), защищайте самую абстрактную принцессу Джибу в мире!
 
-Подписывайтесь [Катя тоже не знает](https://space.bilibili.com/1011797664), спасибо!
+19.Подписывайтесь [Катя тоже не знает](https://space.bilibili.com/1011797664), спасибо!
 
-Подписывайтесь на [Dengruhiru](https://space.bilibili.com/1848290057), она не может понять эти техники, но зубки у нее очень милые,
-жить в любви!
+20.Подписывайтесь на [Dengruhiru](https://space.bilibili.com/1848290057), она не может понять эти техники, но зубки у нее очень милые,жить в любви!
 
-Подписывайтесь [Azusa](https://space.bilibili.com/7706705), tы такая щедрая Большое спасибо!
+21.Подписывайтесь [Azusa](https://space.bilibili.com/7706705), tы такая щедрая Большое спасибо!
+
+22.Подписывайтесь [Ази с детства милый](https://space.bilibili.com/7706705) Спасибо большое!

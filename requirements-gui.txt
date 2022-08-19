@@ -1,0 +1,2 @@
+-r requirements.txt
+PySide6~=6.3.1

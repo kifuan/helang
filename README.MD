@@ -29,6 +29,7 @@ Next-Generation **Cyber** Programming Language from Li Tang.
 
 + 何语言 `Kotlin` 脚本版 [HeLangKotlinScriptImpl](https://github.com/shaokeyibb/HeLangKotlinScriptImpl) --- [实现原理](https://my.minecraft.kim/tech/2022/08/18/post-740/)
 + 何语言 `C#` 版 [HeLangSharp](https://github.com/Cyl18/HeLangSharp)
++ 为什么不用 Rust 重写呢？ [helang-rs](https://github.com/imtsuki/helang-rs)
 + 登陆 `ArchLinux` https://github.com/BenderBlog/Practise-Programs/tree/main/Helang-PKGBUILD
 + L! T! C! (etc.)
 
@@ -339,6 +340,9 @@ test5g;
 关注[吉诺儿kino](https://space.bilibili.com/1383815813)，守护全世界最抽象的吉芭公主！
 
 关注[卡缇娅也不知道鸭](https://space.bilibili.com/1011797664)，谢谢鸭！
+
+关注[灯瑠hiru](https://space.bilibili.com/1848290057)，这些技术她都看不懂，可是她的锯齿牙真的好可爱呀，
+一整个爱住，啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊！
 
 # 附加
 

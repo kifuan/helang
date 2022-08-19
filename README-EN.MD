@@ -27,7 +27,9 @@ Very good works! Love from **Cyber Space**!
 
 + Helang `Kotlin` Script Implementation [HeLangKotlinScriptImpl](https://github.com/shaokeyibb/HeLangKotlinScriptImpl) --- [Implementation Rationale](https://my.minecraft.kim/tech/2022/08/18/post-740/)
 + Helang `C#` Implementation [HeLangSharp](https://github.com/Cyl18/HeLangSharp)
++ Why not rewrite with Rust? [helang-rs](https://github.com/imtsuki/helang-rs)
 + NOW ON `ArchLinux`! https://github.com/BenderBlog/Practise-Programs/tree/main/Helang-PKGBUILD
++ `HeScript`, enjoy `helang` in `JavaScript` / `TypeScript`! [hescript](https://github.com/Rotten-LKZ/hescript)
 + L! T! C! (etc.)
 
 # Description
@@ -328,6 +330,8 @@ Follow [Tang Jiuxia](https://space.bilibili.com/1219196749), thank you my father
 Follow [Kino](https://space.bilibili.com/1383815813), guard the most abstract princess in the world!
 
 Follow [Katya](https://space.bilibili.com/1011797664), thank you yee!
+
+Follow [Hiru](https://space.bilibili.com/1848290057), she can't understand all of these but her serration-shaped tooth are so cuuuuuuuuuteeeeeeeee I LOOOOVVEEEEEE HEEEERRRRRR AAAAAAAAAAAAAAA!
 
 # Addition
 

@@ -1,5 +1,5 @@
 from enum import Enum
-from typing import List, Optional, Callable
+from typing import List, Optional, Callable, Union
 from .tokens import Token, TokenKind
 from .exceptions import BadStatementException
 from .he_ast import (
@@ -43,13 +43,16 @@ class Parser:
         self._tokens = tokens
         self._pos = 0
 
-    def _expect(self, expected_kind: TokenKind, validator: Optional[Callable[[Token], bool]] = None):
+    def _expect(self, expected_kind: Union[TokenKind, List[TokenKind]], validator: Optional[Callable[[Token], bool]] = None) -> Token:
         if self._pos >= len(self._tokens):
             raise BadStatementException('no more tokens')
 
         token = self._tokens[self._pos]
 
-        if token.kind != expected_kind:
+        if not isinstance(expected_kind, list):
+            expected_kind = [expected_kind]
+
+        if token.kind not in expected_kind:
             raise BadStatementException(f'expected {expected_kind} at pos {self._pos}, got {token.kind}')
 
         if validator is not None and not validator(token):
@@ -261,6 +264,7 @@ class Parser:
             | LS expr RS expr'
             | SUB expr expr'
             | ADD expr expr'
+            | MUL expr expr'
             | empty
             ;
         :param prev:
@@ -293,13 +297,13 @@ class Parser:
         return U8GetAST(list_expr, subscript_expr)
 
     @_ruled_methods.bind(Rule.EXPR_LEFT_RECURSIVE)
-    def _left_recur_expr_parse_sub(self, first: AST) -> ArithmeticAST:
-        self._expect(TokenKind.SUB)
+    def _left_recur_expr_parse_add_sub(self, first: AST) -> ArithmeticAST:
+        operator = self._expect([TokenKind.ADD, TokenKind.SUB])
         second = self._root_parse_expr()
-        return ArithmeticAST(first, second, ArithmeticOperator.SUB)
+        return ArithmeticAST(first, second, ArithmeticOperator.from_token(operator))
 
     @_ruled_methods.bind(Rule.EXPR_LEFT_RECURSIVE)
-    def _left_recur_expr_parse_add(self, first: AST) -> ArithmeticAST:
-        self._expect(TokenKind.ADD)
+    def _left_recur_expr_parse_mul(self, first: AST) -> ArithmeticAST:
+        self._expect(TokenKind.MUL)
         second = self._root_parse_expr()
-        return ArithmeticAST(first, second, ArithmeticOperator.ADD)
+        return ArithmeticAST(first, second, ArithmeticOperator.MUL)

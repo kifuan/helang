@@ -1,7 +1,7 @@
 import enum
 import random
 
-from typing import Dict, Optional, List, Tuple
+from typing import Dict, Optional, List, Union
 from .u8 import U8
 from .check_cyberspaces import check_cyberspaces
 from .speed_tester import run_speed_test
@@ -175,53 +175,49 @@ class ArithmeticOperator(enum.Enum):
         return operators[token.kind]
 
 
-def _operate(a: U8, b: U8, op: ArithmeticOperator):
-    if op == ArithmeticOperator.SUB:
-        return a - b
-    elif op == ArithmeticOperator.ADD:
-        return a + b
-    elif op == ArithmeticOperator.MUL:
-        return a * b
-    else:
-        raise NotImplementedError()
-
-
 class ArithmeticAST(AST):
     def __init__(self, first: AST, second: AST, op: ArithmeticOperator):
         self._first = first
         self._second = second
         self._op = op
 
+    # https://leetcode.cn/problems/basic-calculator-ii/solution/ji-ben-ji-suan-qi-ii-by-leetcode-solutio-cm28/
     def evaluate(self, env: Dict[str, U8]) -> U8:
-        # TODO multiplication and division.
-        asts, operators = self._expand()
-        u8s = [ast.evaluate(env) for ast in asts]
-        while len(u8s) > 1:
-            first = u8s.pop(0)
-            second = u8s.pop(0)
-            op = operators.pop(0)
-            result = _operate(first, second, op)
-            u8s.insert(0, result)
-        return u8s[0]
+        expr = self._to_expression(env)
+        n = len(expr)
+        stack = []
+        pre_sign = ArithmeticOperator.ADD
+        num = U8(0)
+        for i in range(n):
+            if isinstance(expr[i], U8):
+                num = expr[i]
+            if i == n - 1 or isinstance(expr[i], ArithmeticOperator):
+                if pre_sign == ArithmeticOperator.ADD:
+                    stack.append(num)
+                elif pre_sign == ArithmeticOperator.SUB:
+                    stack.append(-num)
+                elif pre_sign == ArithmeticOperator.MUL:
+                    stack.append(stack.pop() * num)
+                pre_sign = expr[i]
+                num = U8(0)
+        result = U8(0)
+        for n in stack:
+            result += n
+        return result
 
-    def _expand(self) -> Tuple[List[AST], List[ArithmeticOperator]]:
-        asts = []
-        operators = []
+    def _to_expression(self, env: Dict[str, U8]) -> List[Union[U8, ArithmeticOperator]]:
+        expr = []
 
         if isinstance(self._first, ArithmeticAST):
-            asts_second, operators_second = self._first._expand()
-            asts.extend(asts_second)
-            operators.extend(operators_second)
+            expr.extend(self._first._to_expression(env))
         else:
-            asts.append(self._first)
+            expr.append(self._first.evaluate(env))
 
-        operators.append(self._op)
+        expr.append(self._op)
 
         if isinstance(self._second, ArithmeticAST):
-            asts_second, operators_second = self._second._expand()
-            asts.extend(asts_second)
-            operators.extend(operators_second)
+            expr.extend(self._second._to_expression(env))
         else:
-            asts.append(self._second)
+            expr.append(self._second.evaluate(env))
 
-        return asts, operators
+        return expr

@@ -7,7 +7,7 @@
 <p align="center">
 <a href="https://github.com/kifuan/helang/stargazers"><img src="https://img.shields.io/github/stars/kifuan/helang.svg" alt="Stars"></a>
 <a href="https://github.com/kifuan/helang/issues"><img src="https://img.shields.io/github/issues/kifuan/helang" alt="Issues"></a>
-<a href="LICENSE"><img src="https://img.shields.io/github/license/kifuan/helang" alt="MIT License"></a>
+<a href="LICENSE"><img src="https://img.shields.io/badge/license-BUPT-yellowgreen" alt="BUPT License"></a>
 <a href="https://github.com/kifuan/helang/actions/workflows/tests.yml"><img src="https://github.com/kifuan/helang/actions/workflows/tests.yml/badge.svg" alt="Test"></a>
 </p>
 
@@ -278,8 +278,11 @@ test5g;
 Подписывайтесь на [Genshin](https://space.bilibili.com/401742377), играть в Genshin намного лучше, чем смотреть Кибер Дин Жень!
 Выполните 1 и поблагодарите папу!
 
-Озабоченность [Tang Jiuxia](https://space.bilibili.com/1219196749) поблагодарите папу!
+Подпишитесь [Тан Цзюся все еще хочет лечь] (https://space.bilibili.com/1219196749), спасибо, папа!
 
-Следуйте за [Kino](https://space.bilibili.com/1383815813) , хранителем самой абстрактной в мире принцессы Джиббы!
+Подписывайтесь на [Kinoer Kino](https://space.bilibili.com/1383815813), защищайте самую абстрактную принцессу Джибу в мире!
 
-Концерн [Katia](https://space.bilibili.com/1011797664) , спасибо утка!
+Подписывайтесь [Катя тоже не знает](https://space.bilibili.com/1011797664), спасибо!
+
+Подписывайтесь на [Dengruhiru](https://space.bilibili.com/1848290057), она не может понять эти техники, но зубки у нее очень милые,
+жить в любви!

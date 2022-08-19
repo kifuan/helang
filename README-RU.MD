@@ -5,13 +5,15 @@
 <a href="LICENSE"><img src="https://img.shields.io/github/license/kifuan/helang" alt="MIT License"></a>
 <a href="https://github.com/kifuan/helang/actions/workflows/tests.yml"><img src="https://github.com/kifuan/helang/actions/workflows/tests.yml/badge.svg" alt="Test"></a>
 
+
 [Русский](README-RU.MD) [中文](README.MD)
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=kifuan/helang&type=Date)](https://star-history.com/#kifuan/helang&Date)
 
 
 Язык программирования нового поколения **Cyber** из ли тана.
-
-
-
 
 отличная работа！любовь от **Cyber Spaces**！
 
@@ -21,7 +23,6 @@
 
 
 ## Что это
-
 
 Язык киберпрограммирования следующего поколения, родился в городе **E-SMOKER**: Cyber ​​Litang.
 

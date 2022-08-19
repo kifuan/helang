@@ -7,6 +7,10 @@
 
 [中文](README.MD) [Русский](README-RU.MD)
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=kifuan/helang&type=Date)](https://star-history.com/#kifuan/helang&Date)
+
 
 Next-Generation **Cyber** Programming Language from Li Tang.
 

@@ -5,8 +5,8 @@ from .exceptions import BadStatementException
 from .he_ast import (
     AST, VoidAST, ListAST, VarDefAST, VarAssignAST, VarExprAST,
     PrintAST, SprintAST, VarIncrementAST, U8SetAST, U8GetAST, Test5GAST,
-    EmptyU8InitAST, OrU8InitAST, CyberspacesAST, ArithmeticAST, ArithmeticOperator,
-    LogoAST, Comparator, ComparatorAST
+    EmptyU8InitAST, OrU8InitAST, CyberspacesAST, ArithmeticAST, Operator,
+    LogoAST
 )
 
 
@@ -313,16 +313,16 @@ class Parser:
     def _left_recur_expr_parse_add_sub(self, first: AST) -> ArithmeticAST:
         operator = self._expect([TokenKind.ADD, TokenKind.SUB])
         second = self._root_parse_expr()
-        return ArithmeticAST(first, second, ArithmeticOperator.from_token(operator))
+        return ArithmeticAST(first, second, Operator.from_token(operator))
 
     @_ruled_methods.bind(Rule.EXPR_LEFT_RECURSIVE)
     def _left_recur_expr_parse_mul(self, first: AST) -> ArithmeticAST:
         self._expect(TokenKind.MUL)
         second = self._root_parse_expr()
-        return ArithmeticAST(first, second, ArithmeticOperator.MUL)
+        return ArithmeticAST(first, second, Operator.MUL)
 
     @_ruled_methods.bind(Rule.EXPR_LEFT_RECURSIVE)
-    def _left_recur_expr_parse_compare(self, first: AST) -> ComparatorAST:
+    def _left_recur_expr_parse_compare(self, first: AST) -> ArithmeticAST:
         cmp = self._expect([TokenKind.LT, TokenKind.LEQ, TokenKind.GT, TokenKind.GEQ, TokenKind.NEQ, TokenKind.EQ])
         second = self._root_parse_expr()
-        return ComparatorAST(first, second, Comparator.from_token(cmp))
+        return ArithmeticAST(first, second, Operator.from_token(cmp))

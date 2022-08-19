@@ -138,3 +138,8 @@ def test_cmp():
     assert env['e_true']
     assert env['f_true']
     assert env['g_true']
+
+
+def test_cyber_high_tech_expr():
+    quick_run_string('u8 a = 1 | 2 | 3 + 2 | 3 | 4 < 2 | 3 | 5 * 2 | 3 + 6 | 76 | 8;', env)
+    assert env['a']

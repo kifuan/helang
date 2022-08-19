@@ -45,7 +45,7 @@ class U8:
             # Vector addition.
             return U8([a.value[i] + b.value[i] for i in range(len(a.value))])
 
-        raise CyberArithmeticException(f'illegal operation: {self} + {other}')
+        raise CyberU8ComparingException(f'cannot compare u8 with {type(other)}')
 
     def __sub__(self, other: 'U8'):
         if len(other.value) == 1:
@@ -123,6 +123,11 @@ class U8:
     def __eq__(self, other):
         if isinstance(other, list):
             return self == U8(other)
+
+        if isinstance(other, int):
+            if self.value[0] != other:
+                return False
+            return True
 
         if not isinstance(other, U8):
             raise CyberU8ComparingException(f'cannot compare u8 with {type(other)}')

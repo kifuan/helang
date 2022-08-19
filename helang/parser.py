@@ -181,8 +181,12 @@ class Parser:
         :return: AST for testing 5G.
         """
         self._expect(TokenKind.TEST_5G)
+        try:
+            expr = self._root_parse_expr()
+        except:
+            expr = 0
         self._expect(TokenKind.SEMICOLON)
-        return Test5GAST()
+        return Test5GAST(expr)
 
     @_ruled_methods.bind(Rule.ROOT)
     def _root_parse_cyberspaces(self) -> CyberspacesAST:

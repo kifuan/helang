@@ -323,6 +323,12 @@ It's very simple, and all you need is to start a new line and type:
 test5g;
 ```
 
+Or you can use another mode.
+
+```c
+test5g 1;
+```
+
 Then you can start a 5G speedtest from this line. 
 
 # Summary
@@ -348,6 +354,8 @@ Follow [AdhesionTek](https://space.bilibili.com/248582596), violently kill Saint
 Follow [HiiroVTuber](https://space.bilibili.com/508963009), it's not a pink cat with 425KG nya! 
 
 Follow [GOGO](https://space.bilibili.com/1669777785/)! Follow GOGO woof, follow GOGO thank you woof! 
+
+Follow [KizunaAI](https://space.bilibili.com/1473830)! Super cool Super AI violently kills cyber Tenzin!
 
 Follow [KizunaAI_CN](https://space.bilibili.com/484322035)! Super cute Super AI violently kills cyber Tenzin!
 

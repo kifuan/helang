@@ -75,11 +75,19 @@ def launch_great_script():
     env = dict()
     parser.parse().evaluate(env)
 
+def launch_logo_script():
+    with open('./logo.he', 'r') as f:
+        content = f.read()
+    lexer = Lexer(content)
+    parser = Parser(lexer.lex())
+    env = dict()
+    parser.parse().evaluate(env)
 
 LAUNCHERS = {
     'great': launch_great_script,
     'shell': launch_shell,
     'editor': launch_editor,
+    'logo': launch_logo_script,
 }
 
 
@@ -93,7 +101,7 @@ def main():
         print(f'Invalid launch target {target}, expected target: {legal_targets}.')
         sys.exit(-1)
     if platform.system() != "Darwin":
-        print("WARNING:It seems like you're using a non-Apple device, which is not cool!")
+        print("WARNING: It seems like you're using a non-Apple device, which is not cool!")
     LAUNCHERS[target]()
 
 

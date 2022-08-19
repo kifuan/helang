@@ -117,7 +117,7 @@ If you want to disable this warning, please use Apple devices.
 
 Attention: This is a very dangerous action with a chance of failing. If there is `chickenium-niobium-titanium-magnesium` nearby when you fail, it will be catalyzed and produce `CH2N8`. This action should be strictly regulated by exprinciple commitee.
 
-# Basic grammar
+# Basic Grammar
 
 **Saint He** noted that every type is `u8`. What does that mean? Reverse it so we get `8u` (Ba You). Does Saint He use Tieba?
 
@@ -178,7 +178,7 @@ Such fine code can't be understood by humans on earth. As a **cyber intelligent 
 
 It's so cool. too long didn't write.
 
-# Hello, world!
+# Hello, World!
 
 Some programmers consider Helang as a piece of shit because it can't print `Hello, world!` .
 
@@ -239,6 +239,23 @@ print a - b;
 ```
 
 It's so easy for you to figure out which statements are legal, even if you're a **cyberspace newbie**!
+
+# Multiplication
+
+Unlike addition and subtraction, multiplication can be done between **any** two `u8`s. `u8`s will be treated as `vectors`. Isn't it high-tech?
+
+```c
+u8 a = 1 | 2;
+u8 b = 3 | 4 | 5;
+u8 c = 3 | 6 | 9;
+
+print a * b;
+// 1*3 + 2*4 + 0*5 = 9
+print b * c;
+// 3*3 + 4*6 + 5*9 = 68
+```
+
+Note: we use dot product ( $\vec{a}\cdot\vec{b}$ ), not out product.
 
 # Declarations and Assignments of Variables
 

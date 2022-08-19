@@ -9,7 +9,7 @@ def get_location():
     return re.split('[ ]+', response.json().get('address'))[1]
 
 
-def get_qrcode(content: str):
+def get_qrcode(content: str = '114514'):
     qr = qrcode.QRCode()
     qr.add_data(content)
     img = qr.make_image(fill_color='red')

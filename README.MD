@@ -29,6 +29,7 @@ Next-Generation **Cyber** Programming Language from Li Tang.
 
 + 何语言 `Kotlin` 脚本版 [HeLangKotlinScriptImpl](https://github.com/shaokeyibb/HeLangKotlinScriptImpl) --- [实现原理](https://my.minecraft.kim/tech/2022/08/18/post-740/)
 + 何语言 `C#` 版 [HeLangSharp](https://github.com/Cyl18/HeLangSharp)
++ 为什么不用 Rust 重写呢？ [helang-rs](https://github.com/imtsuki/helang-rs)
 + 登陆 `ArchLinux` https://github.com/BenderBlog/Practise-Programs/tree/main/Helang-PKGBUILD
 + L! T! C! (etc.)
 

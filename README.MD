@@ -319,6 +319,12 @@ test5g;
 
 关注[原神](https://space.bilibili.com/401742377)，玩《原神》比看赛博丁真好多了！
 
+关注[唐九夏还想再躺一下](https://space.bilibili.com/1219196749)，谢谢爹!
+
+关注[吉诺儿kino](https://space.bilibili.com/1383815813)，守护全世界最抽象的吉芭公主！
+
+关注[卡缇娅也不知道鸭](https://space.bilibili.com/1011797664)，谢谢鸭！
+
 # 附加
 
 现在是凌晨两点，我治好了自己的精神内耗。

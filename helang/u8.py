@@ -95,7 +95,7 @@ class U8:
         # Set the elements one by one.
         for subscript in subscripts.value:
             if subscript == 0:
-                raise CyberNotSupportedException('subscript 0 is designed for setting all elements'
+                raise CyberNotSupportedException('subscript 0 is designed for setting all elements,'
                                                  'you should write like array[0] = 10')
             self.value[subscript-1] = val
 

@@ -71,7 +71,7 @@ PS 2: **BUPT** also refers to **Beijing University of Posts and Telecommunicatio
    > python helang.py great
    ```
 
-4. You can also launch `helang.py` in `shell` mode, to communicate with **Saint He** in HeLang in the cyberspace.
+4. You can also launch `helang.py` in `shell` mode, to communicate with **Saint He** in HeLang in Cyber Spaces.
 
    ```bash
    > python helang.py shell
@@ -111,7 +111,7 @@ PS 2: **BUPT** also refers to **Beijing University of Posts and Telecommunicatio
 
 
 PS：
-- If you are from Planet Antimony, there is no need to use the stupid technology from sol3 aborigines. You can use 1.14514 sg (supergrams) `nitrane` to trigger the global termination of the cyberspace through the `exprinciple reaction` to run the program directly.
+- If you are from Planet Antimony, there is no need to use the stupid technology from sol3 aborigines. You can use 1.14514 sg (supergrams) `nitrane` to trigger the global termination of the Cyber Spaces through the `exprinciple reaction` to run the program directly.
 - When you're using **Non-Apple devices** to run, it will raise a warning.
 `It seems like you're using a non-Apple device, which is not cool!`
 If you want to disable this warning, please use Apple devices.
@@ -239,7 +239,7 @@ print a - b;
 // helang.exceptions.CyberArithmeticException: illegal operation: 1 - 1 | 2 | 3
 ```
 
-It's so easy for you to figure out which statements are legal, even if you're a **cyberspace newbie**!
+It's so easy for you to figure out which statements are legal, even if you're a **Cyber Spaces newbie**!
 
 # Multiplication
 
@@ -283,9 +283,9 @@ c = 1 | 2 | 3;
 As a high-tech language, we need to be strict and precise.
 
 
-# Check If You Are in Cyberspace
+# Check If You Are in Cyber Spaces
 
-To meet with **Saint He**, you need to be in **Cyberspace**. Use the command below to check if you're in position: 
+To meet with **Saint He**, you need to be in **Cyber Spaces**. Use the command below to check if you're in position: 
 
 ```c
 cyberspaces;

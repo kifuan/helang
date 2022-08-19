@@ -64,7 +64,10 @@ Next-Generation **Cyber** Programming Language from Li Tang.
 
    ```bash
    > pip install -r requirements.txt
+   # 如果需要 GUI
+   > pip install -r requirements-gui.txt
    ```
+
 
 3. 你可以修改**伟大的脚本** `great.he`，然后以 `great` 的方式启动 `helang.py`：
 

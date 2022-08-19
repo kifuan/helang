@@ -124,11 +124,6 @@ class U8:
         if isinstance(other, list):
             return self == U8(other)
 
-        if isinstance(other, int):
-            if self.value[0] != other:
-                return False
-            return True
-
         if not isinstance(other, U8):
             raise CyberU8ComparingException(f'cannot compare u8 with {type(other)}')
 

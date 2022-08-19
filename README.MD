@@ -324,6 +324,19 @@ cyberspaces;
 
 ```c
 test5g;
+//相当于代码 "test5g music;"
+```
+
+或者使用另一个模式:
+
+```c
+test5g app;
+```
+
+你也可以:
+
+```c
+test5g music;
 ```
 
 即可从本行开始5G测速。

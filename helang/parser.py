@@ -4,7 +4,7 @@ from .tokens import Token, TokenKind
 from .exceptions import BadStatementException
 from .he_ast import (
     AST, VoidAST, ListAST, VarDefAST, VarAssignAST, VarExprAST,
-    PrintAST, SprintAST, VarIncrementAST, U8SetAST, U8GetAST, Test5GAST,
+    PrintAST, SprintAST, VarIncrementAST, U8SetAST, U8GetAST,
     Test5GMusicAST, Test5GAppAST, EmptyU8InitAST, OrU8InitAST,
     CyberspacesAST, OperationAST, Operator, LogoAST
 )
@@ -175,23 +175,16 @@ class Parser:
         return expr
 
     @_ruled_methods.bind(Rule.ROOT)
-    def _root_parse_test_5g(self) -> Test5GAST:
-        """
-        test_5g: TEST_5G SEMICOLON;
-        :return: AST for testing 5G.
-        """
-        self._expect(TokenKind.TEST_5G)
-        self._expect(TokenKind.SEMICOLON)
-        return Test5GAST()
-
-    @_ruled_methods.bind(Rule.ROOT)
     def _root_parse_test_5g(self) -> Test5GMusicAST:
         """
-        test_5g: TEST_5G MUSIC SEMICOLON;
+        test_5g: TEST_5G (none | MUSIC) SEMICOLON;
         :return: AST for testing 5G.
         """
         self._expect(TokenKind.TEST_5G)
-        self._expect(TokenKind.T5G_MUSIC)
+        try:
+            self._expect(TokenKind.T5G_MUSIC)
+        except:
+            pass
         self._expect(TokenKind.SEMICOLON)
         return Test5GMusicAST()
 

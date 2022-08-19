@@ -33,6 +33,7 @@ Next-Generation **Cyber** Programming Language from Li Tang.
 + 登陆 [`ArchLinux`](https://github.com/BenderBlog/Practise-Programs/tree/main/Helang-PKGBUILD)
 + `HeScript`，在 `JavaScript` / `TypeScript` 享受 `helang` 吧！[hescript](https://github.com/Rotten-LKZ/hescript)
 + 要不用 `go` 语言搬运一下？ [helang-go](https://github.com/LanceLRQ/helang-go)
++ 另一种 Rust 实现，支持用 $ 进行招聘！ [HeRang](https://github.com/xjrjyy/herang)
 + L! T! C! (etc.)
 
 # 介绍

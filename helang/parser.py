@@ -18,7 +18,7 @@ class RuledMethods:
         self._rules = dict()
 
     def bind(self, rule: Enum):
-        def bind_method(method: callable):
+        def bind_method(method: Callable):
             if rule not in self._rules.keys():
                 self._rules[rule] = [method]
             else:

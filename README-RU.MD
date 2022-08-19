@@ -29,6 +29,7 @@
 + HeLang： `Kotlin` скрипт [HeLangKotlinScriptImpl](https://github.com/shaokeyibb/HeLangKotlinScriptImpl) --- [Принцип реализации](https://my.minecraft.kim/tech/2022/08/18/post-740/)
 + HeLang： версия `C#` [HeLangSharp](https://github.com/Cyl18/HeLangSharp)
 + `ArchLinux` https://github.com/BenderBlog/Practise-Programs/tree/main/Helang-PKGBUILD
++ `HeScript`, наслаждайтесь `helang` в `JavaScript` / `Typescript`! [hescript](https://github.com/Rotten-LKZ/hescript)
 
 [![Star History Chart](https://api.star-history.com/svg?repos=kifuan/helang&type=Date)](https://star-history.com/#kifuan/helang&Date)
 

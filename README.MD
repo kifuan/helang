@@ -60,7 +60,7 @@ Next-Generation **Cyber** Programming Language from Li Tang.
 1. 把源代码拉下来：
 
    ```bash
-   > git clone git@github.com:kifuan/helang.git
+   > git clone https://github.com/kifuan/helang.git
    ```
 
 2. 下载需要的第三方库：

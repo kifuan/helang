@@ -38,6 +38,7 @@ Very good works! Love from **Cyber Spaces**!
 > Nowadays in the 21st century, `Helang`, `Jvav` and `C--` have become the three irreplaceable programming languages.
 >
 > Saint He. (2202). *A Brief **He**story of Cyber Programming Languages*. Lithang Computer Science and Technology Press.
+
 Next generation cyber programming language, born in the **E-SMOKER** town, Cyber Lithang.
 
 This program was written by a self-typing 5G keyboard on AirDesk with AirPods in 108 cyber minutes.
@@ -170,7 +171,9 @@ In the end, we can combine all the grammar above to write the following code.
 
 ```c
 u8 forceCon = [68];
+
 forceCon[1 | 2 | 6 | 7 | 11 | 52 | 57 | 58 | 65] = 10;
+
 print forceCon;
 ```
 
@@ -244,6 +247,7 @@ u8 a = 1;
 u8 b = 1 | 2 | 3;
 u8 c = 2 | 4 | 6;
 u8 d = 5 | 9;
+
 print a + b;
 // 2 | 3 | 4
 print b + c;
@@ -266,6 +270,7 @@ Unlike addition and subtraction, multiplication can be done between **any** two 
 u8 a = 1 | 2;
 u8 b = 3 | 4 | 5;
 u8 c = 3 | 6 | 9;
+
 print a * b;
 // 1*3 + 2*4 + 0*5 = 9
 print b * c;
@@ -284,6 +289,7 @@ After consulting, we can now support them!
 // Now we support declarations before assignments. The code below is legal:
 u8 a;
 a = 1 | 2;
+
 // In early versions only the following code worked, but it still works now.
 u8 b = 3 | 4;
 ```

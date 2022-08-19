@@ -177,14 +177,11 @@ class Parser:
     @_ruled_methods.bind(Rule.ROOT)
     def _root_parse_test_5g(self) -> Test5GMusicAST:
         """
-        test_5g: TEST_5G (none | MUSIC) SEMICOLON;
+        test_5g: TEST_5G MUSIC SEMICOLON;
         :return: AST for testing 5G.
         """
         self._expect(TokenKind.TEST_5G)
-        try:
-            self._expect(TokenKind.T5G_MUSIC)
-        except:
-            pass
+        self._expect(TokenKind.T5G_MUSIC)
         self._expect(TokenKind.SEMICOLON)
         return Test5GMusicAST()
 

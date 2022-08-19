@@ -3,6 +3,7 @@ import traceback
 import platform
 
 from typing import Dict
+from .quick_runner import quick_run_file
 from helang.lexer import Lexer
 from helang.parser import Parser
 from helang.exceptions import HeLangException
@@ -68,28 +69,11 @@ def launch_editor():
 
 
 def launch_great_script():
-    with open('./great.he', 'r') as f:
-        content = f.read()
-    lexer = Lexer(content)
-    parser = Parser(lexer.lex())
-    env = dict()
-    parser.parse().evaluate(env)
+    quick_run_file('./lib/great.he')
+
 
 def launch_logo_script():
-    with open('./logo.he', 'r') as f:
-        content = f.read()
-    lexer = Lexer(content)
-    parser = Parser(lexer.lex())
-    env = dict()
-    parser.parse().evaluate(env)
-
-def launch_logo_script():
-    with open('./logo.he', 'r') as f:
-        content = f.read()
-    lexer = Lexer(content)
-    parser = Parser(lexer.lex())
-    env = dict()
-    parser.parse().evaluate(env)
+    quick_run_file('./lib/logo.he')
 
 
 LAUNCHERS = {

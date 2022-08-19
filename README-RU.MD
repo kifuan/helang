@@ -14,13 +14,11 @@
 
 # Обзор
 
-
-[Русский](README-RU.MD) [中文](README.MD)
+[English](README-EN.MD) [中文](README.MD) [Русский](README-RU.MD) 
 
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=kifuan/helang&type=Date)](https://star-history.com/#kifuan/helang&Date)
-
 
 Язык программирования нового поколения **Cyber** из ли тана.
 
@@ -29,6 +27,7 @@
 + HeLang： `Kotlin` скрипт [HeLangKotlinScriptImpl](https://github.com/shaokeyibb/HeLangKotlinScriptImpl) --- [Принцип реализации](https://my.minecraft.kim/tech/2022/08/18/post-740/)
 + HeLang： версия `C#` [HeLangSharp](https://github.com/Cyl18/HeLangSharp)
 + `ArchLinux` https://github.com/BenderBlog/Practise-Programs/tree/main/Helang-PKGBUILD
++ `HeScript`, наслаждайтесь `helang` в `JavaScript` / `Typescript`! [hescript](https://github.com/Rotten-LKZ/hescript)
 
 [![Star History Chart](https://api.star-history.com/svg?repos=kifuan/helang&type=Date)](https://star-history.com/#kifuan/helang&Date)
 
@@ -57,6 +56,8 @@
 
    ```bash
    > pip install -r requirements.txt
+   # if need GUI
+   > pip install -r requirements-gui.txt
    ```
 
 3. Вы можете изменить **отличный скрипт** `great.he` и запустить `helang.py` как `great`:
@@ -234,8 +235,6 @@ cyberspaces;
 
 # Измерение скорости 5G
 
-По идее, этот кусок тоже относится к грамматике, но я просто хочу вынести его отдельно.
-
 Просто нужно ввести с новой строки:
 
 ```c
@@ -286,3 +285,5 @@ test5g;
 
 Подписывайтесь на [Dengruhiru](https://space.bilibili.com/1848290057), она не может понять эти техники, но зубки у нее очень милые,
 жить в любви!
+
+Подписывайтесь [Azusa](https://space.bilibili.com/7706705), tы такая щедрая Большое спасибо!

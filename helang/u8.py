@@ -101,4 +101,3 @@ class U8:
                 raise CyberNotSupportedException('subscript 0 is designed for setting all elements,'
                                                  'you should write like array[0] = 10')
             self.value[subscript-1] = val
-

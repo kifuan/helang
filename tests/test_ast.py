@@ -24,4 +24,3 @@ def test_list_get():
 def test_list_set():
     U8SetAST(a, b, c).evaluate(env)
     assert env['a'] == [12, 2, 12, 4]
-

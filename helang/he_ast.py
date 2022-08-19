@@ -1,5 +1,4 @@
 import enum
-import random
 
 from typing import Dict, Optional, List, Union
 from .u8 import U8
@@ -135,12 +134,9 @@ class PrintAST(AST):
 
 
 class Test5GAST(AST):
-    # To avoid coincidence.
-    SPECIAL_VALUE = [random.randint(1, 100), random.randint(1, 100)]
-
     def evaluate(self, env: Dict[str, U8]) -> U8:
         run_speed_test()
-        return U8(Test5GAST.SPECIAL_VALUE)
+        return U8()
 
 
 class SprintAST(AST):
@@ -221,3 +217,11 @@ class ArithmeticAST(AST):
             expr.append(self._second.evaluate(env))
 
         return expr
+
+
+class LogoAST(AST):
+    def evaluate(self, env: Dict[str, U8]) -> U8:
+        # If I import it on the top-level code, it will cause the problem of circular import.
+        from .quick_runner import quick_run_file
+        quick_run_file('./lib/logo.he')
+        return U8()

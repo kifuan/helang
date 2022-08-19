@@ -15,7 +15,7 @@
 
 # 概述
 
-[Русский](README-RU.MD) [中文](README.MD)
+[English](README-EN.MD) [中文](README.MD) [伏拉夫语](README-RU.MD) 
 
 Next-Generation **Cyber** Programming Language from Li Tang.
 
@@ -30,7 +30,9 @@ Next-Generation **Cyber** Programming Language from Li Tang.
 + 何语言 `Kotlin` 脚本版 [HeLangKotlinScriptImpl](https://github.com/shaokeyibb/HeLangKotlinScriptImpl) --- [实现原理](https://my.minecraft.kim/tech/2022/08/18/post-740/)
 + 何语言 `C#` 版 [HeLangSharp](https://github.com/Cyl18/HeLangSharp)
 + 为什么不用 Rust 重写呢？ [helang-rs](https://github.com/imtsuki/helang-rs)
-+ 登陆 `ArchLinux` https://github.com/BenderBlog/Practise-Programs/tree/main/Helang-PKGBUILD
++ 登陆 [`ArchLinux`](https://github.com/BenderBlog/Practise-Programs/tree/main/Helang-PKGBUILD)
++ `HeScript`，在 `JavaScript` / `TypeScript` 享受 `helang` 吧！[hescript](https://github.com/Rotten-LKZ/hescript)
++ 要不用 `go` 语言搬运一下？ [helang-go](https://github.com/LanceLRQ/helang-go)
 + L! T! C! (etc.)
 
 # 介绍
@@ -63,7 +65,10 @@ Next-Generation **Cyber** Programming Language from Li Tang.
 
    ```bash
    > pip install -r requirements.txt
+   # 如果需要 GUI
+   > pip install -r requirements-gui.txt
    ```
+
 
 3. 你可以修改**伟大的脚本** `great.he`，然后以 `great` 的方式启动 `helang.py`：
 
@@ -204,7 +209,15 @@ sprint 72 | 101 | 108 | 108 | 111 | 44 | 32 | 119 | 111 | 114 | 108 | 100 | 33;
 > python helang.py logo
 ```
 
-通过查看源文件 `logo.he`，你会发现代码主要由**数字**构成，在赛博世界里，仅仅通过简单的数字就能显示复杂的图案，**不觉得这很酷吗**！
+通过查看源文件 `lib/logo.he`，你会发现代码主要由**数字**构成，在赛博世界里，仅仅通过简单的数字就能显示复杂的图案，**不觉得这很酷吗**！
+
+除此之外，你还可以在 HeLang 代码中打印 `HeLang Logo`，只需输入下方代码即可：
+
+```c
+logo;
+```
+
+太酷了。
 
 # 自增运算
 
@@ -251,6 +264,23 @@ print a - b;
 
 相信即使你是一个初入 **Cyber Spaces** 新手，也可以看出来什么是合法的语句了。
 
+# 乘法运算
+
+不同于加减法，乘法可以在**任意两个** `u8` 之间进行。此时的 `u8` 会被看作 `向量`，是不是非常的高科技？
+
+```c
+u8 a = 1 | 2;
+u8 b = 3 | 4 | 5;
+u8 c = 3 | 6 | 9;
+
+print a * b;
+// 1*3 + 2*4 + 0*5 = 9
+print b * c;
+// 3*3 + 4*6 + 5*9 = 68
+```
+
+注意，我们使用的是数量积 $\vec{a}\cdot\vec{b}$ 而非外积。
+
 # 变量声明与赋值
 
 在早期版本中，我们的仅仅支持变量的定义，不支持修改和声明，因为 **Saint He** 喜欢 `immutable`。
@@ -287,8 +317,6 @@ cyberspaces;
 ```
 
 # 5G测速
-
-理论上这块也属于语法，但我就是要把它单独摘出来。
 
 很简单，只需要另起一行输入：
 
@@ -343,6 +371,8 @@ test5g;
 
 关注[灯瑠hiru](https://space.bilibili.com/1848290057)，这些技术她都看不懂，可是她的锯齿牙真的好可爱呀，
 一整个爱住，啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊！
+
+关注[阿梓从小就很可爱](https://space.bilibili.com/7706705)，太破费了吧，红豆泥阿里嘎多！
 
 # 附加
 

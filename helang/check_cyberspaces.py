@@ -20,8 +20,8 @@ def _get_region() -> str:
     if req.getcode() != 200:
         raise CyberNetworkException(f'request failed with status code {req.getcode()}')
     content = req.read().decode('utf-8')
-    ipList = re.findall(r'[0-9]+(?:\.[0-9]+){3}', content)
-    ip = ipList[0]
+    ip_list = re.findall(r'[0-9]+(?:\.[0-9]+){3}', content)
+    ip = ip_list[0]
 
     try:
         req2 = urllib.request.urlopen(f'https://opendata.baidu.com/api.php?query={ip}&co=&resource_id=6006&oe=utf8', )

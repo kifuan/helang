@@ -1,7 +1,7 @@
 import re
 
 from enum import Enum
-from typing import List
+from typing import List, Callable
 from .tokens import Token, TokenKind, SINGLE_CHAR_TOKEN_KINDS, KEYWORD_KINDS
 from .exceptions import BadTokenException
 
@@ -11,7 +11,7 @@ class StateSpecificMethods:
         self._methods = dict()
 
     def bind(self, enum: Enum):
-        def bind_method(method: callable):
+        def bind_method(method: Callable):
             self._methods[enum] = method
             return method
         return bind_method

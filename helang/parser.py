@@ -5,7 +5,8 @@ from .exceptions import BadStatementException
 from .he_ast import (
     AST, VoidAST, ListAST, VarDefAST, VarAssignAST, VarExprAST,
     PrintAST, SprintAST, VarIncrementAST, U8SetAST, U8GetAST, Test5GAST,
-    EmptyU8InitAST, OrU8InitAST, CyberspacesAST, ArithmeticAST, ArithmeticOperator
+    EmptyU8InitAST, OrU8InitAST, CyberspacesAST, ArithmeticAST, ArithmeticOperator,
+    LogoAST
 )
 
 
@@ -17,7 +18,7 @@ class RuledMethods:
         self._rules = dict()
 
     def bind(self, rule: Enum):
-        def bind_method(method: callable):
+        def bind_method(method: Callable):
             if rule not in self._rules.keys():
                 self._rules[rule] = [method]
             else:
@@ -43,7 +44,8 @@ class Parser:
         self._tokens = tokens
         self._pos = 0
 
-    def _expect(self, expected_kind: Union[TokenKind, List[TokenKind]], validator: Optional[Callable[[Token], bool]] = None) -> Token:
+    def _expect(self, expected_kind: Union[TokenKind, List[TokenKind]],
+                validator: Optional[Callable[[Token], bool]] = None) -> Token:
         if self._pos >= len(self._tokens):
             raise BadStatementException('no more tokens')
 
@@ -74,6 +76,7 @@ class Parser:
           | test_5g
           | semicolon
           | cyberspaces
+          | logo
           ;
         :return: parsed abstract syntax tree.
         """
@@ -218,6 +221,16 @@ class Parser:
             except BadStatementException:
                 self._pos = saved_pos
         raise BadStatementException('cannot parse expressions')
+
+    @_ruled_methods.bind(Rule.ROOT)
+    def _root_parse_logo(self) -> AST:
+        """
+        logo: LOGO SEMICOLON;
+        :return:
+        """
+        self._expect(TokenKind.LOGO)
+        self._expect(TokenKind.SEMICOLON)
+        return LogoAST()
 
     @_ruled_methods.bind(Rule.EXPR)
     def _expr_parse_empty_u8(self) -> EmptyU8InitAST:

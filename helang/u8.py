@@ -147,9 +147,8 @@ class U8:
     def __eq__(self, other):
         if isinstance(other, list):
             return self == U8(other)
-        if isinstance(other, int):
-            return all(self.value[i] == other for i in range(len(self.value)))
-        elif not isinstance(other, U8):
+
+        if not isinstance(other, U8):
             raise CyberU8ComparingException(f"cannot compare u8 with {type(other)}")
 
         a, b, u8len = U8._fill_zero(self, other)

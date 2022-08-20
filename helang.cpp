@@ -16,6 +16,7 @@ public:
         indexes_.push_back(i);
     }
 
+    NumberList(const std::vector<int>& indexes); indexes_(indexes) {}
     NumberList(std::vector<int>&& indexes): indexes_(indexes) {}
 
     operator int() {
@@ -23,7 +24,7 @@ public:
     }
 
     operator bool() {
-        return bool(indexes_[0]);
+        return indexes_[0];
     }
 
     bool operator<(int n) {
@@ -66,7 +67,7 @@ public:
 
 ArrayWriter forceCon;
 
-NumberList to_number_list(std::string str) {
+NumberList to_number_list(const std::string& str) {
     std::regex re(R"(\s*\|\s*)");
     std::vector<std::string> tokens(std::sregex_token_iterator(str.begin(), str.end(), re, -1), std::sregex_token_iterator());
 

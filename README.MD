@@ -317,6 +317,7 @@ cyberspaces;
 // Your location is UNITED STATES.
 // Congratulations! You are in the Cyber Spaces!
 ```
+由于 **Saint He** 身在一座赛博庐山上，导致他不能看清`IPV6`的全貌，因此你可能会得到`Failed to resolve IP`报错。
 
 # 5G测速
 

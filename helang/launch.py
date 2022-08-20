@@ -17,6 +17,7 @@ SHELL_HELP = """
 .env   Print current environments
 """.strip()
 
+VERSION = '1.0.0'
 
 def process_shell_keywords(text: str, env: Dict[str, U8]):
     if text == 'help':
@@ -76,11 +77,15 @@ def launch_logo_script():
     quick_run_file('./lib/logo.he')
 
 
+def launch_version():
+    print(VERSION)
+
 LAUNCHERS = {
     'great': launch_great_script,
     'shell': launch_shell,
     'editor': launch_editor,
     'logo': launch_logo_script,
+    'version': launch_version,
 }
 
 

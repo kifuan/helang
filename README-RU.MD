@@ -20,12 +20,14 @@
 
 отличная работа！любовь от **Cyber Spaces**！
 
-+ HeLang： `Kotlin` скрипт [HeLangKotlinScriptImpl](https://github.com/shaokeyibb/HeLangKotlinScriptImpl) --- [Принцип реализации](https://my.minecraft.kim/tech/2022/08/18/post-740/)
-+ HeLang： версия `C#` [HeLangSharp](https://github.com/Cyl18/HeLangSharp)
-+ `ArchLinux` https://github.com/BenderBlog/Practise-Programs/tree/main/Helang-PKGBUILD
-+ `HeScript`, наслаждайтесь `helang` в `JavaScript` / `Typescript`! [hescript](https://github.com/Rotten-LKZ/hescript)
-
-[![Star History Chart](https://api.star-history.com/svg?repos=kifuan/helang&type=Date)](https://star-history.com/#kifuan/helang&Date)
++ HeLang: `Kotlin` скрипт [HeLangKotlinScriptImpl](https://github.com/shaokeyibb/HeLangKotlinScriptImpl) --- [Принцип реализации](https://my.minecraft.kim/tech/2022/08/18/post-740/)
++ HeLang: версия `C#` [HeLangSharp](https://github.com/Cyl18/HeLangSharp)
++ Почему бы не переписать helang на Rust? [helang-rs](https://github.com/imtsuki/helang-rs)
++ `ArchLinux`https://github.com/BenderBlog/Practise-Programs/tree/main/Helang-PKGBUILD
++ `HeScript`, наслаждайтесь `helang` в `JavaScript` / `Typescript` [hescript](https://github.com/Rotten-LKZ/hescript)
++ Хотите использовать helang на языке `go`? [helang-go](https://github.com/LanceLRQ/helang-go)
++ Еще одна реализация `Rust`, поддерживающая работу с $! [HeRang](https://github.com/xjrjyy/herang)
++ Еще один `typescript` [HeAssembly](https://github.com/FurryR/HeAssembly)
 
 # Что это
 
@@ -42,10 +44,10 @@
 
 ## Без установки
 
-1. клон исходника：
+1. клон исходника:
 
    ```bash
-   > git clone git@github.com:kifuan/helang.git
+   > git clone https://github.com/kifuan/helang.git
    ```
 
 2. Загрузите необходимые сторонние библиотеки:
@@ -81,13 +83,13 @@
 
 ## Установка
 
-1. Клон исходника：
+1. Клон исходника:
 
    ```bash
-   > git clone git@github.com:kifuan/helang.git
+   > git clone https://github.com/kifuan/helang.git
    ```
 
-2. Установка：
+2. Установка:
 
    ```bash
    > pip install .
@@ -166,17 +168,17 @@ print forceCon;
 
 Это так круто, что я забыл об этом позже, и я не хочу заново читать начало статьи.
 
-# Hello, world!
+# Hello, Litang.
 
-Некоторые думают, что невозможность напечатать «Hello, world!» означает, что этот языке плохой, но это не так.
+Некоторые думают, что невозможность напечатать «Hello, Litang.» означает, что этот языке плохой, но это не так.
 
 **Saint He** занимается разработкой приложений для микроконтроллеров, где взять время на учет строк?
 
-К счастью, после переговоров он согласился на просьбу, позволив нам напечатать «Hello, world!» на этом языке.
+К счастью, после переговоров он согласился на просьбу, позволив нам напечатать «Hello, Litang.» на этом языке.
 
 ```c
-sprint 72 | 101 | 108 | 108 | 111 | 44 | 32 | 119 | 111 | 114 | 108 | 100 | 33;
-// Hello, world!
+sprint 72 | 101 | 108 | 108 | 111 | 44 | 32 | 76 | 105 | 116 | 97 | 110 | 103 | 46; | 46;
+// Hello, Litang.
 ```
 
 Из-за чрезвычайно жестких требований к эффективности мы используем число, соответствующее символу в UTF-8, для представления этого символа.
@@ -228,16 +230,21 @@ cyberspaces;
 // Your location is UNITED STATES.
 // Congratulations! You are in the Cyber Spaces!
 ```
+Поскольку **Святой Хе** находится на кибер-горе, он не может видеть полную картину «IPV6», поэтому вы можете получить сообщение об ошибке «Не удалось разрешить IP».
 
 # Измерение скорости 5G
 
 Просто нужно ввести с новой строки:
 
 ```c
-test5g;
+test5g music;
 ```
 
-Вы можете начать измерение скорости 5G.
+Или используйте другую схему:
+
+```c
+test5g app;
+```
 
 # Итоги
 
@@ -286,3 +293,13 @@ test5g;
 21.Подписывайтесь [Azusa](https://space.bilibili.com/7706705), tы такая щедрая Большое спасибо!
 
 22.Подписывайтесь [Ази с детства милый](https://space.bilibili.com/7706705) Спасибо большое!
+
+23.Подпишитесь на [Ke Jie] (https://space.bilibili.com/525952604),в 20-м веке вы все еще играете в традиционное го?
+
+24.Подписывайтесь [EOE.MINUO](https://space.bilibili.com/1778026586). МУА! Минуо!
+
+25.Подписывайтесь [OTTO](https://space.bilibili.com/628845081The), трехлетний король не боится!
+
+# Добавление
+
+Apple и AirPods являются товарными знаками Apple Inc., зарегистрированными в США и других странах и регионах.

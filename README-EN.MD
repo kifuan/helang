@@ -181,17 +181,17 @@ Such fine code can't be understood by humans on earth. As a **cyber intelligent 
 
 It's so cool. too long didn't write.
 
-# Hello, World!
+# Hello, Litang.
 
-Some programmers consider Helang as a piece of shit because it can't print `Hello, world!` .
+Some programmers consider Helang as a piece of shit because it can't print `Hello, Litang.` .
 
 But **Saint He** focuses on the development of MCUs. How can he take strings into account?
 
-Well, after consultation, he agreed our request and allowed us to print `Hello, world!` in the language.
+Well, after consultation, he agreed our request and allowed us to print `Hello, Litang.` in the language.
 
 ```c
-sprint 72 | 101 | 108 | 108 | 111 | 44 | 32 | 119 | 111 | 114 | 108 | 100 | 33;
-// Hello, world!
+sprint 72 | 101 | 108 | 108 | 111 | 44 | 32 | 76 | 105 | 116 | 97 | 110 | 103 | 46; | 46;
+// Hello, Litang.
 ```
 
 To strictly optimize the performance, We use UTF-8 decimals instead of characters.
@@ -200,7 +200,7 @@ By decreasing readability, we gain exponential performance increase. Credits to 
 
 # Print Logo
 
-You may think it too easy to print only `Hello, world!` . After all, **it doesn't meet with science geeks' imagination for a better future**.
+You may think it too easy to print only `Hello, Litang.` . After all, **it doesn't meet with science geeks' imagination for a better future**.
 
 Actually, you can print HeLang's logo by:
 ```bash
@@ -372,6 +372,12 @@ Follow [Hiru](https://space.bilibili.com/1848290057), she can't understand all o
 
 Follow [Azusa](https://space.bilibili.com/7706705), you are so generous, thank you very much!
 
+Follow [EOE.MINUO](https://space.bilibili.com/1778026586). MUA! Minuo!
+
+Follow [OTTO](https://space.bilibili.com/628845081The), three-year-old king has no fear!
+
 # Addition
 
 It's 2:00 a.m. now, I cured my mental internal friction.
+
+Apple and AirPods are trademarks of Apple Inc., registered in the U.S. and other countries and regions.

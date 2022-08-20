@@ -107,7 +107,13 @@ Next-Generation **Cyber** Programming Language from Li Tang.
 
    输入 `.help` 获取 `Shell` 运行过程中的帮助。没错，我借鉴了 `node` 的 `REPL Keywords`。
 
-5. 使用 `LTCode` 进行开发：
+5. **Saint He** 赋予了 `HeLang` 的包容性，如下的输入同样可以开始：
+
+   ```bash
+   > python helang.py
+   ```
+
+6. 使用 `LTCode` 进行开发：
    
    ```bash
    > python helang.py editor

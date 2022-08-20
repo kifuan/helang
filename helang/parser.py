@@ -4,9 +4,9 @@ from .tokens import Token, TokenKind
 from .exceptions import BadStatementException
 from .he_ast import (
     AST, VoidAST, ListAST, VarDefAST, VarAssignAST, VarExprAST,
-    PrintAST, SprintAST, VarIncrementAST, U8SetAST, U8GetAST, Test5GAST,
-    EmptyU8InitAST, OrU8InitAST, CyberspacesAST, ArithmeticAST, ArithmeticOperator,
-    LogoAST
+    PrintAST, SprintAST, VarIncrementAST, U8SetAST, U8GetAST,
+    Test5GMusicAST, Test5GAppAST, EmptyU8InitAST, OrU8InitAST,
+    CyberspacesAST, OperationAST, Operator, LogoAST
 )
 
 
@@ -175,14 +175,26 @@ class Parser:
         return expr
 
     @_ruled_methods.bind(Rule.ROOT)
-    def _root_parse_test_5g(self) -> Test5GAST:
+    def _root_parse_test_5g(self) -> Test5GMusicAST:
         """
-        test_5g: TEST_5G SEMICOLON;
+        test_5g: TEST_5G MUSIC SEMICOLON;
         :return: AST for testing 5G.
         """
         self._expect(TokenKind.TEST_5G)
+        self._expect(TokenKind.T5G_MUSIC)
         self._expect(TokenKind.SEMICOLON)
-        return Test5GAST()
+        return Test5GMusicAST()
+
+    @_ruled_methods.bind(Rule.ROOT)
+    def _root_parse_test_5g(self) -> Test5GAppAST:
+        """
+        test_5g: TEST_5G APP SEMICOLON;
+        :return: AST for testing 5G.
+        """
+        self._expect(TokenKind.TEST_5G)
+        self._expect(TokenKind.T5G_APP)
+        self._expect(TokenKind.SEMICOLON)
+        return Test5GAppAST()
 
     @_ruled_methods.bind(Rule.ROOT)
     def _root_parse_cyberspaces(self) -> CyberspacesAST:
@@ -275,9 +287,7 @@ class Parser:
         expr'
             : LS expr RS ASSIGN expr expr'
             | LS expr RS expr'
-            | SUB expr expr'
-            | ADD expr expr'
-            | MUL expr expr'
+            | (ADD | SUB | MUL | CMP) expr expr'
             | empty
             ;
         :param prev:
@@ -310,13 +320,13 @@ class Parser:
         return U8GetAST(list_expr, subscript_expr)
 
     @_ruled_methods.bind(Rule.EXPR_LEFT_RECURSIVE)
-    def _left_recur_expr_parse_add_sub(self, first: AST) -> ArithmeticAST:
-        operator = self._expect([TokenKind.ADD, TokenKind.SUB])
+    def _left_recur_expr_parse_operation(self, first: AST) -> OperationAST:
+        operator = self._expect([
+            TokenKind.ADD, TokenKind.SUB,
+            TokenKind.MUL, TokenKind.LT,
+            TokenKind.LEQ, TokenKind.GT,
+            TokenKind.GEQ, TokenKind.NEQ,
+            TokenKind.EQ
+        ])
         second = self._root_parse_expr()
-        return ArithmeticAST(first, second, ArithmeticOperator.from_token(operator))
-
-    @_ruled_methods.bind(Rule.EXPR_LEFT_RECURSIVE)
-    def _left_recur_expr_parse_mul(self, first: AST) -> ArithmeticAST:
-        self._expect(TokenKind.MUL)
-        second = self._root_parse_expr()
-        return ArithmeticAST(first, second, ArithmeticOperator.MUL)
+        return OperationAST(first, second, Operator.from_token(operator))

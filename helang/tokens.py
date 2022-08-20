@@ -28,28 +28,42 @@ class TokenKind(enum.Enum):
     SUB = 12
     # ++
     INCREMENT = 13
-    # =
-    ASSIGN = 14
-    # Less than, <
-    LT = 15
     # Keywords
-    KEYWORD = 16
+    KEYWORD = 14
     # Saint He's U8
-    U8 = 17
+    U8 = 15
     # Print statement, supporting for single expression
-    PRINT = 18
+    PRINT = 16
     # 5G testing statement
-    TEST_5G = 19
+    TEST_5G = 17
     # Print string
-    SPRINT = 20
+    SPRINT = 18
     # Whether current region is in the Cyber Spaces.
-    CYBERSPACES = 21
+    CYBERSPACES = 19
     # +
-    ADD = 22
+    ADD = 20
     # *
-    MUL = 23
+    MUL = 21
     # Print logo.
-    LOGO = 24
+    LOGO = 22
+    # =
+    ASSIGN = 23
+    # ==
+    EQ = 24
+    # Less than, <
+    LT = 25
+    # Greater than, >
+    GT = 26
+    # Greater than or equals to, >=
+    GEQ = 27
+    # Less than or equals to, <=
+    LEQ = 28
+    # Not equals to, !=
+    NEQ = 29
+    #TEST_5G argument
+    T5G_MUSIC = 30
+    #TEST_5G argument
+    T5G_APP = 31
 
 
 SINGLE_CHAR_TOKEN_KINDS = {
@@ -62,8 +76,6 @@ SINGLE_CHAR_TOKEN_KINDS = {
     ']': TokenKind.RS,
     ',': TokenKind.COMMA,
     ';': TokenKind.SEMICOLON,
-    '=': TokenKind.ASSIGN,
-    '<': TokenKind.LT,
     '-': TokenKind.SUB,
     '*': TokenKind.MUL,
 }
@@ -72,10 +84,24 @@ KEYWORD_KINDS = {
     'print': TokenKind.PRINT,
     'u8': TokenKind.U8,
     'test5g': TokenKind.TEST_5G,
+    'music': TokenKind.T5G_MUSIC,
+    'app': TokenKind.T5G_APP,
     'cyberspaces': TokenKind.CYBERSPACES,
     'sprint': TokenKind.SPRINT,
     'logo': TokenKind.LOGO,
 }
+
+COMPARATOR_KINDS = {
+    '=': TokenKind.ASSIGN,
+    '==': TokenKind.EQ,
+    '>': TokenKind.GT,
+    '>=': TokenKind.GEQ,
+    '<': TokenKind.LT,
+    '<=': TokenKind.LEQ,
+    '!=': TokenKind.NEQ,
+}
+
+COMPARATOR_CHARS = {char for op in COMPARATOR_KINDS.keys() for char in op}
 
 
 class Token:

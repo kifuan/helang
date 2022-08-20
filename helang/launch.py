@@ -9,7 +9,6 @@ from helang.parser import Parser
 from helang.exceptions import HeLangException
 from helang.u8 import U8
 from helang.lt_code.window import LTCodeWindow
-from PySide6.QtWidgets import QApplication
 
 
 SHELL_HELP = """
@@ -62,6 +61,7 @@ def launch_shell():
 
 
 def launch_editor():
+    from PySide6.QtWidgets import QApplication
     app = QApplication()
     editor = LTCodeWindow()
     editor.show()

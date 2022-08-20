@@ -16,10 +16,6 @@
 
 [English](README-EN.MD) [中文](README.MD) [Русский](README-RU.MD) 
 
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=kifuan/helang&type=Date)](https://star-history.com/#kifuan/helang&Date)
-
 Язык программирования нового поколения **Cyber** из ли тана.
 
 отличная работа！любовь от **Cyber Spaces**！

@@ -317,13 +317,20 @@ cyberspaces;
 // Your location is UNITED STATES.
 // Congratulations! You are in the Cyber Spaces!
 ```
+由于 **Saint He** 身在一座赛博庐山上，导致他不能看清`IPV6`的全貌，因此你可能会得到`Failed to resolve IP`报错。
 
 # 5G测速
 
 很简单，只需要另起一行输入：
 
 ```c
-test5g;
+test5g music;
+```
+
+或者使用另一个模式:
+
+```c
+test5g app;
 ```
 
 即可从本行开始5G测速。
@@ -375,6 +382,8 @@ test5g;
 一整个爱住，啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊！
 
 22.关注[阿梓从小就很可爱](https://space.bilibili.com/7706705)，太破费了吧，红豆泥阿里嘎多！
+
+23.关注[柯洁](https://space.bilibili.com/525952604)，都什么年代，还在下传统围棋？
 
 # 附加
 

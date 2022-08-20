@@ -2,7 +2,7 @@ import urllib.request
 import re
 import json
 
-from .exceptions import CyberNetworkException
+from .exceptions import CyberNetworkException, CyberNotSupportedException
 
 
 # The strings are got from https://pv.sohu.com/cityjson?ie=utf-8.
@@ -21,6 +21,8 @@ def _get_region() -> str:
         raise CyberNetworkException(f'request failed with status code {req.getcode()}')
     content = req.read().decode('utf-8')
     ip_list = re.findall(r'[0-9]+(?:\.[0-9]+){3}', content)
+    if not ip_list:
+        raise CyberNotSupportedException('failed to resolve IP')
     ip = ip_list[0]
 
     try:

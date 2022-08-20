@@ -56,3 +56,18 @@ def test_operators():
     ]
 
     assert tokens == expected
+
+
+def test_eq_ieq():
+    tokens = Lexer('= == != >= <= > <').lex()
+    expected = [
+        Token('=', TokenKind.ASSIGN),
+        Token('==', TokenKind.EQ),
+        Token('!=', TokenKind.NEQ),
+        Token('>=', TokenKind.GEQ),
+        Token('<=', TokenKind.LEQ),
+        Token('>', TokenKind.GT),
+        Token('<', TokenKind.LT)
+    ]
+
+    assert tokens == expected

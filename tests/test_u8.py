@@ -19,7 +19,7 @@ a_mul_b = [70]
 a_mul_c = [10]
 
 
-def test_u8_compare():
+def test_u8_eq():
     assert a == a
     assert a == a.value
     assert a != b
@@ -55,3 +55,17 @@ def test_u8_mul():
     assert a*b == a_mul_b
     assert a*c == a_mul_c
     assert a*c == c*a
+
+
+def test_u8_compare():
+    assert U8([1, 2, 3]) < U8([4, 5, 6])
+    assert not U8([1, 5]) < U8([3, 4, 2])
+    assert U8([1, 2]) <= U8([1, 2, 4])
+    assert U8([4, 5, 6]) > U8([1, 3])
+    assert U8([4, 5, 6]) >= U8([4, 2])
+    assert U8([1, 2]) == U8([1, 2, 0])
+    assert U8([2, 1]) != U8([1, 2])
+
+
+def test_u8_empty_cache():
+    assert object.__eq__(U8(), U8())

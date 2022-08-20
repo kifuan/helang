@@ -2,8 +2,11 @@ import re
 
 from enum import Enum
 from typing import List, Callable
-from .tokens import Token, TokenKind, SINGLE_CHAR_TOKEN_KINDS, KEYWORD_KINDS
 from .exceptions import BadTokenException
+from .tokens import (
+    Token, TokenKind, SINGLE_CHAR_TOKEN_KINDS, KEYWORD_KINDS,
+    COMPARATOR_KINDS, COMPARATOR_CHARS
+)
 
 
 class StateSpecificMethods:
@@ -31,13 +34,16 @@ class LexerState(Enum):
     INCREMENT = 4
     # Comments.
     COMMENT = 5
+    # Equal and inequality
+    COMPARATOR = 6
 
 
 class Lexer:
     _state_methods = StateSpecificMethods()
 
     def __init__(self, content: str):
-        # Add a newline to let the methods do some clean-up.
+        # Add a newline to let the methods do some clean-up,
+        # as it will change to the WAIT state when encounters whitespaces.
         self._content = content + '\n'
         self._state = LexerState.WAIT
         self._pos = 0
@@ -85,6 +91,11 @@ class Lexer:
         if self._curr == '+':
             # Matched increment operator, changing state to INCREMENT.
             self._state = LexerState.INCREMENT
+            return
+
+        if self._curr in COMPARATOR_CHARS:
+            # Matched comparator char, changing state to COMPARATOR
+            self._state = LexerState.COMPARATOR
             return
 
         if self._curr in SINGLE_CHAR_TOKEN_KINDS.keys():
@@ -137,7 +148,7 @@ class Lexer:
         self._pos += 1
 
     @_state_methods.bind(LexerState.COMMENT)
-    def _lex_comment(self, tokens: List[Token]):
+    def _lex_comment(self, _: List[Token]):
         if self._cache == '/' and self._curr != '/':
             raise BadTokenException('/')
 
@@ -149,3 +160,18 @@ class Lexer:
 
         self._cache += self._curr
         self._pos += 1
+
+    @_state_methods.bind(LexerState.COMPARATOR)
+    def _lex_comparator(self, tokens: List[Token]):
+        if self._curr in COMPARATOR_CHARS:
+            self._cache += self._curr
+            self._pos += 1
+            return
+
+        if len(self._cache) in (1, 2):
+            token = Token(self._cache, COMPARATOR_KINDS[self._cache])
+            tokens.append(token)
+            self._state = LexerState.WAIT
+            return
+
+        raise BadTokenException(self._cache)

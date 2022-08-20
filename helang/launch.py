@@ -90,7 +90,7 @@ def main():
     """
     target = sys.argv[-1]
     while target not in LAUNCHERS.keys():
-        legal_targets = '  '.join(LAUNCHERS.keys())
+        legal_targets = ', '.join(LAUNCHERS.keys())
         print(f'Invalid launch target {target}, expected target: {legal_targets}.')
         target = input('Enter the name of the target to start.\n')
     if platform.system() != "Darwin":

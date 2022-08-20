@@ -89,10 +89,10 @@ def main():
     Main function
     """
     target = sys.argv[-1]
-    if target not in LAUNCHERS.keys():
+    while target not in LAUNCHERS.keys():
         legal_targets = '  '.join(LAUNCHERS.keys())
-        print('Enter the name of the startup mode to start.')
-        target = input(f'{legal_targets}\n')
+        print(f'Invalid launch target {target}, expected target: {legal_targets}.')
+        target = input('Enter the name of the target to start.\n')
     if platform.system() != "Darwin":
         print("WARNING: It seems like you're using a non-Apple device, which is not cool!")
     LAUNCHERS[target]()

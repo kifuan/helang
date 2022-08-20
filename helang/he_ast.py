@@ -1,10 +1,12 @@
 import enum
 
 from typing import Dict, Optional, List, Union
+
+from helang.lexer import Lexer
 from .u8 import U8
 from .check_cyberspaces import check_cyberspaces
 from .speed_tester import run_speed_test_music, run_speed_test_app
-from .exceptions import CyberNameException
+from .exceptions import CyberNameException, CyberNotSupportedException
 from .tokens import Token, TokenKind
 
 
@@ -31,7 +33,7 @@ class VarAssignAST(AST):
 
     def evaluate(self, env: Dict[str, U8]) -> U8:
         if self._ident not in env.keys():
-            raise CyberNameException(f'{self._ident} is not defined.')
+            raise CyberNameException(f"{self._ident} is not defined.")
         val = self._val.evaluate(env)
         env[self._ident] = val
         return val
@@ -53,8 +55,16 @@ class VarExprAST(AST):
 
     def evaluate(self, env: Dict[str, U8]) -> U8:
         if self._ident not in env.keys():
-            raise CyberNameException(f'{self._ident} is not defined.')
+            raise CyberNameException(f"{self._ident} is not defined.")
         return env[self._ident]
+
+
+class StatementAST(AST):
+    def __init__(self, value: AST):
+        self._value = value
+
+    def evaluate(self, env: Dict[str, U8]) -> U8:
+        self._value.evaluate(env)
 
 
 class EmptyU8InitAST(AST):
@@ -70,7 +80,7 @@ class OrU8InitAST(AST):
     How the King He defines uint8 list: by | operator.
     """
 
-    def __init__(self, first: int, second: Optional['OrU8InitAST'] = None):
+    def __init__(self, first: int, second: Optional["OrU8InitAST"] = None):
         self._first = first
         self._second = second
 
@@ -139,6 +149,17 @@ class Test5GMusicAST(AST):
         return U8()
 
 
+class IfAST(AST):
+    def __init__(self, expr: AST, cmd: AST):
+        self._expr = expr
+        self._cmd = cmd
+
+    def evaluate(self, env: Dict[str, U8]) -> U8:
+        cond = self._expr.evaluate(env)
+        if cond == 1:
+            self._cmd.evaluate(env)
+
+
 class Test5GAppAST(AST):
     def evaluate(self, env: Dict[str, U8]) -> U8:
         run_speed_test_app()
@@ -151,7 +172,7 @@ class SprintAST(AST):
 
     def evaluate(self, env: Dict[str, U8]) -> U8:
         chars = self._expr.evaluate(env)
-        val = ''.join(chr(char) for char in chars.value)
+        val = "".join(chr(char) for char in chars.value)
         print(val)
         return chars
 
@@ -280,5 +301,6 @@ class LogoAST(AST):
     def evaluate(self, env: Dict[str, U8]) -> U8:
         # If I import it on the top-level code, it will cause the problem of circular import.
         from .quick_runner import quick_run_file
-        quick_run_file('./lib/logo.he')
+
+        quick_run_file("./lib/logo.he")
         return U8()

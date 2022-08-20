@@ -64,6 +64,10 @@ class TokenKind(enum.Enum):
     T5G_MUSIC = 30
     #TEST_5G argument
     T5G_APP = 31
+    # IF statement
+    IF = 32
+    # STATMENT
+    STATEMENT = 33
 
 
 SINGLE_CHAR_TOKEN_KINDS = {
@@ -89,6 +93,7 @@ KEYWORD_KINDS = {
     'cyberspaces': TokenKind.CYBERSPACES,
     'sprint': TokenKind.SPRINT,
     'logo': TokenKind.LOGO,
+    'if': TokenKind.IF
 }
 
 COMPARATOR_KINDS = {

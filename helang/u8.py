@@ -1,15 +1,18 @@
 from typing import Optional, List, Union, Tuple, Generator
 from inspect import isgenerator
 from .exceptions import (
-    CyberArithmeticException, CyberU8ComparingException,
-    CyberNotSupportedException
+    CyberArithmeticException,
+    CyberU8ComparingException,
+    CyberNotSupportedException,
 )
 
 
 class U8:
     _cached_empty = None
 
-    def __new__(cls, value: Optional[Union[List[int], Generator[int, None, None], int]] = None):
+    def __new__(
+        cls, value: Optional[Union[List[int], Generator[int, None, None], int]] = None
+    ):
         if value is not None:
             return super().__new__(cls)
         if cls._cached_empty is None:
@@ -19,7 +22,10 @@ class U8:
     """
     The Saint He's specific type.
     """
-    def __init__(self, value: Optional[Union[List[int], Generator[int, None, None], int]] = None):
+
+    def __init__(
+        self, value: Optional[Union[List[int], Generator[int, None, None], int]] = None
+    ):
         if value is None:
             self.value = []
         elif isinstance(value, int):
@@ -29,10 +35,10 @@ class U8:
         elif isinstance(value, list):
             self.value = value
         else:
-            raise CyberNotSupportedException('u8 can only contain integers')
+            raise CyberNotSupportedException("u8 can only contain integers")
 
     def __str__(self) -> str:
-        return ' | '.join(str(element) for element in self.value)
+        return " | ".join(str(element) for element in self.value)
 
     def __repr__(self):
         return str(self)
@@ -41,9 +47,9 @@ class U8:
         return U8(-v for v in self.value)
 
     def increment(self):
-        self.value = [v+1 for v in self.value]
+        self.value = [v + 1 for v in self.value]
 
-    def __add__(self, other: 'U8'):
+    def __add__(self, other: "U8"):
         a, b = self, other
 
         if len(a.value) == 1:
@@ -57,9 +63,9 @@ class U8:
             # Vector addition.
             return U8(a.value[i] + b.value[i] for i in range(len(a.value)))
 
-        raise CyberArithmeticException(f'illegal operation: {self} + {other}')
+        raise CyberArithmeticException(f"illegal operation: {self} + {other}")
 
-    def __sub__(self, other: 'U8'):
+    def __sub__(self, other: "U8"):
         if len(other.value) == 1:
             # Normal subtraction.
             return U8(v - other.value[0] for v in self.value)
@@ -68,9 +74,9 @@ class U8:
             # Vector subtraction.
             return U8(self.value[i] - other.value[i] for i in range(len(self.value)))
 
-        raise CyberArithmeticException(f'illegal operation: {self} - {other}')
+        raise CyberArithmeticException(f"illegal operation: {self} - {other}")
 
-    def __mul__(self, other: 'U8'):
+    def __mul__(self, other: "U8"):
         a, b = self.value, other.value
         # Makes a the shorter list
         if len(a) > len(b):
@@ -79,16 +85,20 @@ class U8:
         a += [0] * (expected_length - len(a))
         return U8(sum(a[i] * b[i] for i in range(expected_length)))
 
-    def __getitem__(self, subscripts: 'U8'):
+    def __getitem__(self, subscripts: "U8"):
         # Like the operation of sublist.
         # And Saint He likes arrays whose subscript start from 1.
-        return U8(self.value[i-1] for i in range(1, len(self.value) + 1) if i in subscripts.value)
+        return U8(
+            self.value[i - 1]
+            for i in range(1, len(self.value) + 1)
+            if i in subscripts.value
+        )
 
-    def __setitem__(self, subscripts: 'U8', value: 'U8'):
+    def __setitem__(self, subscripts: "U8", value: "U8"):
         if len(value.value) > 1:
-            raise CyberNotSupportedException('no high dimension u8')
+            raise CyberNotSupportedException("no high dimension u8")
         if len(value.value) == 0:
-            raise CyberNotSupportedException('you must set u8 with single value')
+            raise CyberNotSupportedException("you must set u8 with single value")
         val = value.value[0]
 
         # Set all elements if subscript is single 0.
@@ -99,12 +109,14 @@ class U8:
         # Set the elements one by one.
         for subscript in subscripts.value:
             if subscript == 0:
-                raise CyberNotSupportedException('subscript 0 is designed for setting all elements,'
-                                                 'you should write like array[0] = 10')
-            self.value[subscript-1] = val
+                raise CyberNotSupportedException(
+                    "subscript 0 is designed for setting all elements,"
+                    "you should write like array[0] = 10"
+                )
+            self.value[subscript - 1] = val
 
     @staticmethod
-    def _fill_zero(a: 'U8', b: 'U8') -> Tuple['U8', 'U8', int]:
+    def _fill_zero(a: "U8", b: "U8") -> Tuple["U8", "U8", int]:
         """
         Fill zeroes with shorter u8.
         :param a: first u8.
@@ -135,14 +147,15 @@ class U8:
     def __eq__(self, other):
         if isinstance(other, list):
             return self == U8(other)
-
-        if not isinstance(other, U8):
-            raise CyberU8ComparingException(f'cannot compare u8 with {type(other)}')
+        if isinstance(other, int):
+            return all(self.value[i] == other for i in range(len(self.value)))
+        elif not isinstance(other, U8):
+            raise CyberU8ComparingException(f"cannot compare u8 with {type(other)}")
 
         a, b, u8len = U8._fill_zero(self, other)
         return all(a.value[i] == b.value[i] for i in range(u8len))
 
     def __bool__(self):
         if len(self.value) != 1:
-            raise CyberNotSupportedException(f'{self} cannot be used as a bool')
+            raise CyberNotSupportedException(f"{self} cannot be used as a bool")
         return bool(self.value[0])

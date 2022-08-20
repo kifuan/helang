@@ -1,12 +1,31 @@
 from enum import Enum
 from typing import List, Optional, Callable, Union
+
+from helang.lexer import Lexer
 from .tokens import Token, TokenKind
 from .exceptions import BadStatementException
 from .he_ast import (
-    AST, VoidAST, ListAST, VarDefAST, VarAssignAST, VarExprAST,
-    PrintAST, SprintAST, VarIncrementAST, U8SetAST, U8GetAST,
-    Test5GMusicAST, Test5GAppAST, EmptyU8InitAST, OrU8InitAST,
-    CyberspacesAST, OperationAST, Operator, LogoAST
+    AST,
+    IfAST,
+    StatementAST,
+    VoidAST,
+    ListAST,
+    VarDefAST,
+    VarAssignAST,
+    VarExprAST,
+    PrintAST,
+    SprintAST,
+    VarIncrementAST,
+    U8SetAST,
+    U8GetAST,
+    Test5GMusicAST,
+    Test5GAppAST,
+    EmptyU8InitAST,
+    OrU8InitAST,
+    CyberspacesAST,
+    OperationAST,
+    Operator,
+    LogoAST,
 )
 
 
@@ -14,6 +33,7 @@ class RuledMethods:
     """
     Bind a list of methods with specified rules, which are Enums.
     """
+
     def __init__(self):
         self._rules = dict()
 
@@ -24,6 +44,7 @@ class RuledMethods:
             else:
                 self._rules[rule].append(method)
             return method
+
         return bind_method
 
     def get(self, rule: Enum):
@@ -44,10 +65,13 @@ class Parser:
         self._tokens = tokens
         self._pos = 0
 
-    def _expect(self, expected_kind: Union[TokenKind, List[TokenKind]],
-                validator: Optional[Callable[[Token], bool]] = None) -> Token:
+    def _expect(
+        self,
+        expected_kind: Union[TokenKind, List[TokenKind]],
+        validator: Optional[Callable[[Token], bool]] = None,
+    ) -> Token:
         if self._pos >= len(self._tokens):
-            raise BadStatementException('no more tokens')
+            raise BadStatementException("no more tokens")
 
         token = self._tokens[self._pos]
 
@@ -55,10 +79,14 @@ class Parser:
             expected_kind = [expected_kind]
 
         if token.kind not in expected_kind:
-            raise BadStatementException(f'expected {expected_kind} at pos {self._pos}, got {token.kind}')
+            raise BadStatementException(
+                f"expected {expected_kind} at pos {self._pos}, got {token.kind}"
+            )
 
         if validator is not None and not validator(token):
-            raise BadStatementException(f'failed to pass custom validator at offset {self._pos}')
+            raise BadStatementException(
+                f"failed to pass custom validator at offset {self._pos}"
+            )
 
         self._pos += 1
         return token
@@ -75,6 +103,7 @@ class Parser:
           | expr_statement
           | test_5g
           | semicolon
+          | if
           | cyberspaces
           | logo
           ;
@@ -90,8 +119,10 @@ class Parser:
                 except BadStatementException:
                     self._pos = saved_pos
             else:
-                raise BadStatementException(f'failed to parse tokens started from {self._pos}, '
-                                            f'which is {self._tokens[self._pos]}')
+                raise BadStatementException(
+                    f"failed to parse tokens started from {self._pos}, "
+                    f"which is {self._tokens[self._pos]}"
+                )
         # Return the AST itself if there is only one.
         return ListAST(asts) if len(asts) != 1 else asts[0]
 
@@ -105,6 +136,18 @@ class Parser:
         expr = self._root_parse_expr()
         self._expect(TokenKind.SEMICOLON)
         return PrintAST(expr)
+
+    @_ruled_methods.bind(Rule.ROOT)
+    def _root_parse_if(self) -> IfAST:
+        """
+        if: IF expr stmt SEMICOLON;
+        :retun: AST for if condition.
+        """
+        self._expect(TokenKind.IF)
+        expr = self._root_parse_expr()
+        stmt = self._expr_parse_statement()
+        self._expect(TokenKind.SEMICOLON)
+        return IfAST(expr,stmt)
 
     @_ruled_methods.bind(Rule.ROOT)
     def _root_parse_sprint(self) -> SprintAST:
@@ -232,7 +275,7 @@ class Parser:
                 return self._left_recur_expr_parse(prev)
             except BadStatementException:
                 self._pos = saved_pos
-        raise BadStatementException('cannot parse expressions')
+        raise BadStatementException("cannot parse expressions")
 
     @_ruled_methods.bind(Rule.ROOT)
     def _root_parse_logo(self) -> AST:
@@ -282,6 +325,17 @@ class Parser:
         ident = self._expect(TokenKind.IDENT)
         return VarExprAST(ident.content)
 
+    @_ruled_methods.bind(Rule.EXPR)
+    def _expr_parse_statement(self) -> StatementAST:
+        """
+        statement: STATEMENT;
+        :return: variable expression.
+        """
+        stmt = self._expect(TokenKind.STATEMENT)
+        lexer = Lexer(stmt.content[1:-1])
+        parser = Parser(lexer.lex())
+        return StatementAST(parser.parse())
+
     def _left_recur_expr_parse(self, prev: AST) -> AST:
         """
         expr'
@@ -321,12 +375,18 @@ class Parser:
 
     @_ruled_methods.bind(Rule.EXPR_LEFT_RECURSIVE)
     def _left_recur_expr_parse_operation(self, first: AST) -> OperationAST:
-        operator = self._expect([
-            TokenKind.ADD, TokenKind.SUB,
-            TokenKind.MUL, TokenKind.LT,
-            TokenKind.LEQ, TokenKind.GT,
-            TokenKind.GEQ, TokenKind.NEQ,
-            TokenKind.EQ
-        ])
+        operator = self._expect(
+            [
+                TokenKind.ADD,
+                TokenKind.SUB,
+                TokenKind.MUL,
+                TokenKind.LT,
+                TokenKind.LEQ,
+                TokenKind.GT,
+                TokenKind.GEQ,
+                TokenKind.NEQ,
+                TokenKind.EQ,
+            ]
+        )
         second = self._root_parse_expr()
         return OperationAST(first, second, Operator.from_token(operator))

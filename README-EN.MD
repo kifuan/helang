@@ -56,7 +56,7 @@ PS 2: **BUPT** also refers to **Beijing University of Posts and Telecommunicatio
 1. Pull the source code:
 
    ```bash
-   > git clone git@github.com:kifuan/helang.git
+   > git clone https://github.com/kifuan/helang.git
    ```
 
 2. Install third-party libraries:
@@ -96,7 +96,7 @@ PS 2: **BUPT** also refers to **Beijing University of Posts and Telecommunicatio
 1. Pull the source code：
 
    ```bash
-   > git clone git@github.com:kifuan/helang.git
+   > git clone https://github.com/kifuan/helang.git
    ```
 
 2. Install：

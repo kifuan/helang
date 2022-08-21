@@ -64,6 +64,12 @@ class TokenKind(enum.Enum):
     T5G_MUSIC = 30
     #TEST_5G argument
     T5G_APP = 31
+    #LOGO argument
+    LOGO_SMALL = 32
+    #LOGO argument
+    LOGO_MIDDLE = 33
+    #LOGO argument
+    LOGO_BIG = 34
 
 
 SINGLE_CHAR_TOKEN_KINDS = {
@@ -89,6 +95,9 @@ KEYWORD_KINDS = {
     'cyberspaces': TokenKind.CYBERSPACES,
     'sprint': TokenKind.SPRINT,
     'logo': TokenKind.LOGO,
+    'small': TokenKind.LOGO_SMALL,
+    'middle': TokenKind.LOGO_MIDDLE,
+    'big': TokenKind.LOGO_BIG,
 }
 
 COMPARATOR_KINDS = {

@@ -4,6 +4,7 @@ from typing import Dict, Optional, List, Union
 from .u8 import U8
 from .check_cyberspaces import check_cyberspaces
 from .speed_tester import run_speed_test_music, run_speed_test_app
+from .logo import print_logo_small, print_logo_middle, print_logo_big
 from .exceptions import CyberNameException
 from .tokens import Token, TokenKind
 
@@ -145,6 +146,24 @@ class Test5GAppAST(AST):
         return U8()
 
 
+class LogoSmallAST(AST):
+    def evaluate(self, env: Dict[str, U8]) -> U8:
+        print_logo_small()
+        return U8()
+
+
+class LogoMiddleAST(AST):
+    def evaluate(self, env: Dict[str, U8]) -> U8:
+        print_logo_middle()
+        return U8()
+
+
+class LogoBigAST(AST):
+    def evaluate(self, env: Dict[str, U8]) -> U8:
+        print_logo_big()
+        return U8()
+
+
 class SprintAST(AST):
     def __init__(self, expr: AST):
         self._expr = expr
@@ -274,11 +293,3 @@ class OperationAST(AST):
             expr.append(self._second.evaluate(env))
 
         return expr
-
-
-class LogoAST(AST):
-    def evaluate(self, env: Dict[str, U8]) -> U8:
-        # If I import it on the top-level code, it will cause the problem of circular import.
-        from .quick_runner import quick_run_file
-        quick_run_file('./lib/logo.he')
-        return U8()

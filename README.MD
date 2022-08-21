@@ -90,7 +90,6 @@ Next-Generation **Cyber** Programming Language from Li Tang.
    > pip install -r requirements-gui.txt
    ```
 
-
 3. 你可以修改**伟大的脚本** `great.he`，然后以 `great` 的方式启动 `helang.py`：
 
    ```bash
@@ -242,10 +241,18 @@ sprint 72 | 101 | 108 | 108 | 111 | 44 | 32 | 76 | 105 | 116 | 97 | 110 | 103 | 
 除此之外，你还可以在 HeLang 代码中打印 `HeLang Logo`，只需输入下方代码即可：
 
 ```c
-logo;
+logo big;
 ```
 
-太酷了。
+你当然也可以打印一个小一些的 `HeLang Logo`，中等大小的同样不在话下：
+
+```c
+logo small;
+
+logo middle;
+```
+
+在这种情况下，你会发现一切计算都会在 `HeLang` 中进行。在赛博世界里，仅仅通过简单的计算就能显示复杂的图案，**这真是太酷了**。
 
 # 自增运算
 

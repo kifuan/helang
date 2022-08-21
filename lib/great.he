@@ -8,3 +8,7 @@ sprint 72 | 101 | 108 | 108 | 111 | 44 | 32 | 119 | 111 | 114 | 108 | 100 | 33;
 u8 forceCon = [68];
 forceCon[1 | 2 | 6 | 7 | 11 | 52 | 57 | 58 | 65] = 10;
 print forceCon;
+
+logo big;
+
+test5g music;

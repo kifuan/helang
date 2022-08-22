@@ -374,7 +374,7 @@ Follow [Azusa](https://space.bilibili.com/7706705), you are so generous, thank y
 
 Follow [EOE.MINUO](https://space.bilibili.com/1778026586). MUA! Minuo!
 
-Follow [OTTO](https://space.bilibili.com/628845081The), three-year-old king has no fear!
+Follow [OTTO](https://space.bilibili.com/628845081),The three-year-old king has no fear!
 
 # Addition
 

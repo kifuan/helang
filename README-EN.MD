@@ -376,6 +376,8 @@ Follow [EOE.MINUO](https://space.bilibili.com/1778026586). MUA! Minuo!
 
 Follow [OTTO](https://space.bilibili.com/628845081),The three-year-old king has no fear!
 
+Follow [Last Xuan丶](https://weibo.com/u/5902995241)，How many times do I have to tell you that your youth is infinitely resurrected by my last xuan!
+
 # Addition
 
 It's 2:00 a.m. now, I cured my mental internal friction.

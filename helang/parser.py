@@ -6,8 +6,7 @@ from .he_ast import (
     AST, VoidAST, ListAST, VarDefAST, VarAssignAST, VarExprAST,
     PrintAST, SprintAST, VarIncrementAST, U8SetAST, U8GetAST,
     Test5GMusicAST, Test5GAppAST, EmptyU8InitAST, OrU8InitAST,
-    CyberspacesAST, OperationAST, Operator, LogoSmallAST,
-    LogoMiddleAST, LogoBigAST
+    CyberspacesAST, OperationAST, Operator, LogoAST, LogoSize
 )
 
 
@@ -236,37 +235,15 @@ class Parser:
         raise BadStatementException('cannot parse expressions')
 
     @_ruled_methods.bind(Rule.ROOT)
-    def _root_parse_logo_small(self) -> LogoSmallAST:
+    def _root_parse_logo_big(self) -> LogoAST:
         """
-        logo: LOGO SEMICOLON;
+        logo: LOGO (BIG | MEDIUM | TINY) SEMICOLON;
         :return:
         """
         self._expect(TokenKind.LOGO)
-        self._expect(TokenKind.LOGO_SMALL)
+        size = self._expect([TokenKind.LOGO_TINY, TokenKind.LOGO_MEDIUM, TokenKind.LOGO_LARGE])
         self._expect(TokenKind.SEMICOLON)
-        return LogoSmallAST()
-
-    @_ruled_methods.bind(Rule.ROOT)
-    def _root_parse_logo_middle(self) -> LogoMiddleAST:
-        """
-        logo: LOGO SEMICOLON;
-        :return:
-        """
-        self._expect(TokenKind.LOGO)
-        self._expect(TokenKind.LOGO_MIDDLE)
-        self._expect(TokenKind.SEMICOLON)
-        return LogoMiddleAST()
-
-    @_ruled_methods.bind(Rule.ROOT)
-    def _root_parse_logo_big(self) -> LogoBigAST:
-        """
-        logo: LOGO SEMICOLON;
-        :return:
-        """
-        self._expect(TokenKind.LOGO)
-        self._expect(TokenKind.LOGO_BIG)
-        self._expect(TokenKind.SEMICOLON)
-        return LogoBigAST()
+        return LogoAST(LogoSize.from_token(size))
 
     @_ruled_methods.bind(Rule.EXPR)
     def _expr_parse_empty_u8(self) -> EmptyU8InitAST:

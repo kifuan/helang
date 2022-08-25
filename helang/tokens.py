@@ -65,11 +65,11 @@ class TokenKind(enum.Enum):
     #TEST_5G argument
     T5G_APP = 31
     #LOGO argument
-    LOGO_SMALL = 32
+    LOGO_TINY = 32
     #LOGO argument
-    LOGO_MIDDLE = 33
+    LOGO_MEDIUM = 33
     #LOGO argument
-    LOGO_BIG = 34
+    LOGO_LARGE = 34
 
 
 SINGLE_CHAR_TOKEN_KINDS = {
@@ -95,9 +95,9 @@ KEYWORD_KINDS = {
     'cyberspaces': TokenKind.CYBERSPACES,
     'sprint': TokenKind.SPRINT,
     'logo': TokenKind.LOGO,
-    'small': TokenKind.LOGO_SMALL,
-    'middle': TokenKind.LOGO_MIDDLE,
-    'big': TokenKind.LOGO_BIG,
+    'tiny': TokenKind.LOGO_TINY,
+    'medium': TokenKind.LOGO_MEDIUM,
+    'large': TokenKind.LOGO_LARGE,
 }
 
 COMPARATOR_KINDS = {

@@ -34,7 +34,7 @@ class LexerState(Enum):
     INCREMENT = 4
     # Comments.
     COMMENT = 5
-    # Equal and inequality
+    # Comparators.
     COMPARATOR = 6
 
 
@@ -58,10 +58,7 @@ class Lexer:
 
     @property
     def _curr(self):
-        """
-        Current character.
-        :return: current character.
-        """
+        # Current character.
         return self._content[self._pos]
 
     @_state_methods.bind(LexerState.WAIT)

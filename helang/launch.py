@@ -4,10 +4,10 @@ import platform
 
 from typing import Dict
 from .quick_runner import quick_run_file
-from helang.lexer import Lexer
-from helang.parser import Parser
-from helang.exceptions import HeLangException
-from helang.u8 import U8
+from .lexer import Lexer
+from .parser import Parser
+from .exceptions import HeLangException
+from .u8 import U8
 
 
 SHELL_HELP = """

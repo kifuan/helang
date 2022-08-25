@@ -36,7 +36,7 @@ Next-Generation **Cyber** Programming Language from Li Tang.
 
 来自理塘的下一代 **赛博** 编程语言。
 
-通过纯理塘自研的 HeLang，创建行业新生态，赋能无人涉及的新赛道，打通语言底层逻辑，注入新型语法基因。
+通过纯理塘自研的 `HeLang`，创建行业**新生态**，赋能无人涉及的**新赛道**，打通语言**底层逻辑**，注入**新型语法基因**。
 
 引个流先：https://www.bilibili.com/video/BV1XW4y1h79A/
 
@@ -54,6 +54,7 @@ Next-Generation **Cyber** Programming Language from Li Tang.
 + 要不用 `go` 语言搬运一下？ [helang-go](https://github.com/LanceLRQ/helang-go)
 + 另一种 Rust 实现，支持用 $ 进行招聘！ [HeRang](https://github.com/xjrjyy/herang)
 + 我们要进军底层开发！[HeAssembly](https://github.com/FurryR/HeAssembly)
++ `Saint He` 曾说：要有函数式！于是 Haskell 便诞生。[HelangHaskellImpl](https://github.com/CziSKY/HelangHaskellImpl)
 + L! T! C! (etc.)
 
 # 介绍

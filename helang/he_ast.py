@@ -162,11 +162,11 @@ class LogoSize(enum.Enum):
 
 
 class LogoAST(AST):
-    def __init__(self, expr: LogoSize):
-        self._expr = expr
+    def __init__(self, size: LogoSize):
+        self._size = size
 
     def evaluate(self, env: Dict[str, U8]) -> U8:
-        print_logo(self._expr)
+        print_logo(self._size)
         return U8()
 
 

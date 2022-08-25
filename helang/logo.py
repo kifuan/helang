@@ -2,7 +2,7 @@ from PIL import Image
 from time import time
 
 
-def _print_logo(img_width):
+def _print_logo(img_width: int):
     img_height = int(img_width * 0.55)
     img = Image.open('./logo.png').resize((img_width,img_height), Image.ANTIALIAS)
 

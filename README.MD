@@ -55,6 +55,7 @@ Next-Generation **Cyber** Programming Language from Li Tang.
 + 另一种 Rust 实现，支持用 $ 进行招聘！ [HeRang](https://github.com/xjrjyy/herang)
 + 我们要进军底层开发！[HeAssembly](https://github.com/FurryR/HeAssembly)
 + `Saint He` 曾说：要有函数式！于是 Haskell 便诞生。[HelangHaskellImpl](https://github.com/CziSKY/HelangHaskellImpl)
++ 在Swift中使用Helang [HelangSwift](https://github.com/suransea/HelangSwift)
 + L! T! C! (etc.)
 
 # 介绍

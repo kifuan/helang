@@ -16,7 +16,7 @@ public:
         indexes_.push_back(i);
     }
 
-    NumberList(const std::vector<int>& indexes); indexes_(indexes) {}
+    NumberList(const std::vector<int>& indexes): indexes_(indexes) {}
     NumberList(std::vector<int>&& indexes): indexes_(indexes) {}
 
     operator int() {

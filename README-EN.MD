@@ -12,11 +12,32 @@
 <a href="https://github.com/kifuan/helang/actions/workflows/tests.yml"><img src="https://github.com/kifuan/helang/actions/workflows/tests.yml/badge.svg" alt="Test"></a>
 </p>
 
-# Summary
+# NO LONGER MAINTAINED
+
+The conic section is absotulely much funner than the toy language.
+
+So I decided to abandon this toy.
+
+Download and play.
+
+I won't add any new features further.
+
+This repository is pretty suitable for compiler newbies, so notice your **code quality** when submitting PRs.
+
+That's all.
+
+**Note: Community PRs and issues are still acceptable.**
+
+**Translation note: This translation will not be updated further by [@ZeroAurora](https://github.com/ZeroAurora) and [@SherkeyXD](https://github.com/SherkeyXD). Very bad translation! Hate from BUPT.**
+
+# Overview
 
 [English](README-EN.MD) [中文](README.MD) [Русский](README-RU.MD) 
 
-Next-Generation **Cyber** Programming Language from Li Tang.
+Next-Generation **Cyber** Programming Language from Litang.
+
+Through the independently R&D of `HeLang` in Litang, we can create a **new industrial ecology**, power the **brand new track**, dig through the **inner logic** of programming languages, and finnally insert **new grammar genes** into the language development.
+
 
 WATCH THE GREAT VIDEO! https://www.bilibili.com/video/BV1XW4y1h79A/
 
@@ -27,19 +48,25 @@ WATCH THE GREAT VIDEO! https://www.bilibili.com/video/BV1XW4y1h79A/
 Very good works! Love from **Cyber Spaces**!
 
 + Helang `Kotlin` Script Implementation [HeLangKotlinScriptImpl](https://github.com/shaokeyibb/HeLangKotlinScriptImpl) --- [Implementation Rationale](https://my.minecraft.kim/tech/2022/08/18/post-740/)
-+ Helang `C#` Implementation [HeLangSharp](https://github.com/Cyl18/HeLangSharp)
++ Helang `C#` implementation [HeLangSharp](https://github.com/Cyl18/HeLangSharp)
 + Why not rewrite with Rust? [helang-rs](https://github.com/imtsuki/helang-rs)
 + NOW ON [`ArchLinux`](https://github.com/BenderBlog/Practise-Programs/tree/main/Helang-PKGBUILD)!
 + `HeScript`, enjoy `helang` in `JavaScript` / `TypeScript`! [hescript](https://github.com/Rotten-LKZ/hescript)
++ Translate it with `go`? [helang-go](https://github.com/LanceLRQ/helang-go)
++ Another Rust implementation that supports recruiting with $ ! [HeRang](https://github.com/xjrjyy/herang)
++ March towards low level development! [HeAssembly](https://github.com/FurryR/HeAssembly)
++ `Saint He` said, let there be functional programming! And there was Haskell. [HelangHaskellImpl](https://github.com/CziSKY/HelangHaskellImpl)
++ Using Helang in Swift [HelangSwift](https://github.com/suransea/HelangSwift)
++ `OCaml` wanna be cyber ⚆_⚆ [HelangML](https://github.com/luooooob/HelangML)
 + L! T! C! (etc.)
 
 # Description
 
 > Nowadays in the 21st century, `Helang`, `Jvav` and `C--` have become the three irreplaceable programming languages.
 >
-> Saint He. (2202). *A Brief **He**story of Cyber Programming Languages*. Lithang Computer Science and Technology Press.
+> Saint He. (2202). *A Brief **He**story of Cyber Programming Languages*. Litang Computer Science and Technology Press.
 
-Next generation cyber programming language, born in the **E-SMOKER** town, Cyber Lithang.
+Next generation cyber programming language, born in the **E-SMOKER** town, Cyber Litang.
 
 This program was written by a self-typing 5G keyboard on AirDesk with AirPods in 108 cyber minutes.
 
@@ -51,7 +78,7 @@ PS 2: **BUPT** also refers to **Beijing University of Posts and Telecommunicatio
 
 # Usage
 
-## Use without installation
+## Use Without Installation
 
 1. Pull the source code:
 
@@ -83,15 +110,22 @@ PS 2: **BUPT** also refers to **Beijing University of Posts and Telecommunicatio
 
    Type `.help` to get the runtime help. Yeah, a copy-paste from `node`'s `REPL Keywords`.
 
-5. Develop with `LTCode`：
+5. **Saint He** is generous. He forgives those who forgets to add startup arguments. So the following command is also valid:
+
+   ```bash
+   > python helang.py
+   ```
+
+6. Develop with `LTCode`：
    
    ```bash
    > python helang.py editor
    ```
    
-   WIP. New features are planned.
+   _WIP. New features are planned._
+   Only running code in current window is supported, and crashes may occur when frequently doing `print`.
    
-## Install locally
+## Install Locally
 
 1. Pull the source code：
 
@@ -124,7 +158,7 @@ Attention: This is a very dangerous action with a chance of failing. If there is
 
 **Saint He** noted that every type is `u8`. What does that mean? Reverse it so we get `8u` (Ba You). Does Saint He use Tieba?
 
-Besides, `u8` is similar to `v8` in shape. So follow [Ace Taffy](https://space.bilibili.com/1265680561) nya, follow Ace Taffy thank you nya.
+Besides, `u8` is similar to `v8` in shape. So follow [Ace Ta↑ffy↓](https://space.bilibili.com/1265680561) nya, follow Ace Taffy thank you nya.
 
 
 As you can see, we use `|`, **the bitwise or**, to replace the traditional array. **Why are you still using traditional arrays nowadays?** 
@@ -190,7 +224,7 @@ But **Saint He** focuses on the development of MCUs. How can he take strings int
 Well, after consultation, he agreed our request and allowed us to print `Hello, Litang.` in the language.
 
 ```c
-sprint 72 | 101 | 108 | 108 | 111 | 44 | 32 | 76 | 105 | 116 | 97 | 110 | 103 | 46; | 46;
+sprint 72 | 101 | 108 | 108 | 111 | 44 | 32 | 76 | 105 | 116 | 97 | 110 | 103 | 46;
 // Hello, Litang.
 ```
 
@@ -200,7 +234,7 @@ By decreasing readability, we gain exponential performance increase. Credits to 
 
 # Print Logo
 
-You may think it too easy to print only `Hello, Litang.` . After all, **it doesn't meet with science geeks' imagination for a better future**.
+You may think it too easy to print only `Hello, Litang.` . After all, **it doesn't meet with the science geek's imagination for a better future**.
 
 Actually, you can print HeLang's logo by:
 ```bash
@@ -212,10 +246,18 @@ By looking at the source `lib/logo.he`, you will find the code is mostly **numbe
 Besides, you can also print `HeLang Logo` in HeLang code:
 
 ```c
-logo;
+logo large;
 ```
 
-COOL.
+Smaller and Medium? No problem.
+
+```c
+logo tiny;
+
+logo medium;
+```
+
+In this circumstance, every computation happens in `Helang`. In Cyber Spaces, complex images can be displayed with simple computations. **COOL.**
 
 # Increment
 
@@ -315,6 +357,9 @@ cyberspaces;
 // Congratulations! You are in the Cyber Spaces!
 ```
 
+Because **Saint He** lives in a cyber wonderland, he may be unable to see `IPv6` clearly, so you may get the error `Failed to resolve IP`.
+
+
 # 5G Speedtest
 
 It's very simple, and all you need is to start a new line and type: 
@@ -323,58 +368,67 @@ It's very simple, and all you need is to start a new line and type:
 test5g;
 ```
 
+Or an other mode:
+
+```c
+test5g app;
+```
+
 Then you can start a 5G speedtest from this line. 
 
 # Summary
 
-Follow [Ace Taffy](https://space.bilibili.com/1265680561) nya, follow Ace Taffy thank you nya.
+1. Follow [Ace Taffy](https://space.bilibili.com/1265680561) nya, follow Ace Taffy thank you nya.
 
-Follow [NyaRu](https://space.bilibili.com/697091119) thank you nya,  nya.
+2. Follow [NyaRu](https://space.bilibili.com/697091119) thank you nya,  nya.
 
-Follow [Xingtong](https://space.bilibili.com/401315430), liuliu plums give out!
+3. Follow [Xingtong](https://space.bilibili.com/401315430), liuliu plums give out!
 
-Follow [Diana](https://space.bilibili.com/672328094), satisfy your craving for good food every dinner.
+4. Follow [Diana](https://space.bilibili.com/672328094), satisfy your craving for good food every dinner.
 
-Follow [Ava](https://space.bilibili.com/672346917), it's never too late to follow her!
+5. Follow [Ava](https://space.bilibili.com/672346917), it's never too late to follow her!
 
-Follow [Eileen](https://space.bilibili.com/672342685), follow Eileen ga, follow Eileen thank you ga!
+6. Follow [Eileen](https://space.bilibili.com/672342685), follow Eileen ga, follow Eileen thank you ga!
 
-Follow [Bella](https://space.bilibili.com/672353429), follow Bella mur, Follow Bella thank you mur! 
+7. Follow [Bella](https://space.bilibili.com/672353429), follow Bella mur, Follow Bella thank you mur! 
 
-Report [Rarity](https://space.bilibili.com/1437582453/) thank you nya, we can't let a Japanese eat Chinese rice nya. 
+8. Report [Rarity](https://space.bilibili.com/1437582453/) thank you nya, we can't let a Japanese eat Chinese rice nya. 
 
-Follow [AdhesionTek](https://space.bilibili.com/248582596), violently kill Saint He nya🥰
+9. Follow [AdhesionTek](https://space.bilibili.com/248582596), violently kill Saint He nya🥰
 
-Follow [HiiroVTuber](https://space.bilibili.com/508963009), it's not a pink cat with 425KG nya! 
+10. Follow [HiiroVTuber](https://space.bilibili.com/508963009), it's not a pink cat with 425KG nya! 
 
-Follow [GOGO](https://space.bilibili.com/1669777785/)! Follow GOGO woof, follow GOGO thank you woof! 
+11. Follow [GOGO](https://space.bilibili.com/1669777785/)! Follow GOGO woof, follow GOGO thank you woof! 
 
-Follow [KizunaAI_CN](https://space.bilibili.com/484322035)! Super cute Super AI violently kills cyber Tenzin!
+12. Follow [KizunaAI_CN](https://space.bilibili.com/484322035)! Super cute Super AI violently kills Cyber Tenzin!
 
-Follow [Mana](https://space.bilibili.com/3149619), thank you nya.
+13. Follow [Mana](https://space.bilibili.com/3149619), thank you nya.
 
-Follow [Luo Tianyi](https://space.bilibili.com/36081646), a more human-alike VSinger than Cyber Tenzin!
+14. Follow [Luo Tianyi](https://space.bilibili.com/36081646), a more human-alike VSinger than Cyber Tenzin!
 
-Follow [Tenzin Tsundue](https://space.bilibili.com/1463028352), why are you still following cyber Tenzin nowadays? You'd better pay attention to the traditional Tenzin!
+15. Follow [Tenzin Tsundue](https://space.bilibili.com/1463028352), why are you still following Cyber Tenzin nowadays? You'd better pay attention to the Traditional Tenzin!
 
-Follow [Minato Aqua](https://space.bilibili.com/375504219) and [Rinco](https://www.nicovideo.jp/user/45194653
+16. Follow [Minato Aqua](https://space.bilibili.com/375504219) and [Rinco](https://www.nicovideo.jp/user/45194653
 )! Stupid-overflowing ocean maid (shit onion) and a cute singer who likes Minase Inori. Looking forward to wood mouth spinning nie. Also, please support the [galgame](https://shop.hololivepro.com/products/aquarium_hololive_official_edition) that Minato Aqua stars in!
 
-Follow [Genshin Impact](https://space.bilibili.com/401742377), playing Genshin Impact is much better than watching cyber Tenzin!
+17. Follow [Genshin Impact](https://space.bilibili.com/401742377), playing Genshin Impact is much better than watching Cyber Tenzin!
 
-Follow [Tang Jiuxia](https://space.bilibili.com/1219196749), thank you my father!
+18. Follow [Tang Jiuxia](https://space.bilibili.com/1219196749), thank you my father!
 
-Follow [Kino](https://space.bilibili.com/1383815813), guard the most abstract princess in the world!
+19. Follow [Kino](https://space.bilibili.com/1383815813), guard the most abstract princess in the world!
 
-Follow [Katya](https://space.bilibili.com/1011797664), thank you yee!
+20. Follow [Katya](https://space.bilibili.com/1011797664), thank you yee!
 
-Follow [Hiru](https://space.bilibili.com/1848290057), she can't understand all of these but her serration-shaped tooth are so cuuuuuuuuuteeeeeeeee I LOOOOVVEEEEEE HEEEERRRRRR AAAAAAAAAAAAAAA!
+21. Follow [Hiru](https://space.bilibili.com/1848290057), she can't understand all of these but her serration-shaped tooth are so cuuuuuuuuuteeeeeeeee I LOOOOVVEEEEEE HEEEERRRRRR AAAAAAAAAAAAAAA!
 
-Follow [Azusa](https://space.bilibili.com/7706705), you are so generous, thank you very much!
+22. Follow [Azusa](https://space.bilibili.com/7706705), you are so generous, thank you very much!
 
-Follow [EOE.MINUO](https://space.bilibili.com/1778026586). MUA! Minuo!
+23, Follow [Ke Jie](https://space.bilibili.com/525952604), why are you still playing traditional Go nowadays?
 
-Follow [OTTO](https://space.bilibili.com/628845081),The three-year-old king has no fear!
+24. Follow [EOE.MINUO](https://space.bilibili.com/1778026586). MUA! Minuo!
+
+25. Follow [OTTO](https://space.bilibili.com/628845081),The three-year-old king has no fear!
+
 
 # Addition
 

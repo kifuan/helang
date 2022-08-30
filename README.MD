@@ -32,7 +32,7 @@
 
 [English](README-EN.MD) [中文](README.MD) [Русский](README-RU.MD) 
 
-Next-Generation **Cyber** Programming Language from Li Tang.
+Next-Generation **Cyber** Programming Language from Litang.
 
 来自理塘的下一代 **赛博** 编程语言。
 

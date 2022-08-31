@@ -426,6 +426,8 @@ test5g app;
 
 25.关注[电棍otto](https://space.bilibili.com/628845081)，年仅三岁的国王毫无畏惧！
 
+26.观看番剧[高校舰队](https://mzh.moegirl.org.cn/zh-hans/%E9%AB%98%E6%A0%A1%E8%88%B0%E9%98%9F)，百合薄纱赛博丁真！
+
 # 附加
 
 现在是凌晨两点，我治好了自己的精神内耗。

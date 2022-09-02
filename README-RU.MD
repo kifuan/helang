@@ -28,6 +28,7 @@
 + Хотите использовать helang на языке `go`? [helang-go](https://github.com/LanceLRQ/helang-go)
 + Еще одна реализация `Rust`, поддерживающая работу с $! [HeRang](https://github.com/xjrjyy/herang)
 + Еще один `typescript` [HeAssembly](https://github.com/FurryR/HeAssembly)
++ С помощью метапрограммирования шаблонов C++ мы обнаружили язык в кибер-метавселенной! [HeLangCppMetaImpl](https://github.com/Timothy-Liuxf/HeLangCppMetaImpl)
 
 # Что это
 

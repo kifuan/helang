@@ -57,7 +57,7 @@ Next-Generation **Cyber** Programming Language from Litang.
 + `Saint He` 曾说：要有函数式！于是 Haskell 便诞生。[HelangHaskellImpl](https://github.com/CziSKY/HelangHaskellImpl)
 + 在Swift中使用Helang [HelangSwift](https://github.com/suransea/HelangSwift)
 + `OCaml` 也想要变得赛博⚆_⚆ [HelangML](https://github.com/luooooob/HelangML)
-+ 通过 C++ 模板元编程，我们在赛博元宇宙发现了何而上语言！[HeLangCppMetaImpl](https://github.com/Timothy-Liuxf/HeLangCppMetaImpl)
++ 通过 C++ 模板元编程，我们在赛博元宇宙发现了**何而上语言（Meta-Helang）**！[HeLangCppMetaImpl](https://github.com/Timothy-Liuxf/HeLangCppMetaImpl)
 + L! T! C! (etc.)
 
 # 介绍

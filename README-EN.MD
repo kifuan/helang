@@ -58,7 +58,7 @@ Very good works! Love from **Cyber Spaces**!
 + `Saint He` said, let there be functional programming! And there was Haskell. [HelangHaskellImpl](https://github.com/CziSKY/HelangHaskellImpl)
 + Using Helang in Swift [HelangSwift](https://github.com/suransea/HelangSwift)
 + `OCaml` wanna be cyber ⚆_⚆ [HelangML](https://github.com/luooooob/HelangML)
-+ With C++ metaprogramming, we found Meta-Helang in cyber meta-universe! [HeLangCppMetaImpl](https://github.com/Timothy-Liuxf/HeLangCppMetaImpl)
++ With C++ metaprogramming, we found **Meta-Helang** in cyber meta-universe! [HeLangCppMetaImpl](https://github.com/Timothy-Liuxf/HeLangCppMetaImpl)
 + L! T! C! (etc.)
 
 # Description

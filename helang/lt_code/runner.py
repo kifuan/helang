@@ -1,10 +1,10 @@
 import sys
 import threading
 
+from typing import TextIO
 from ..lexer import Lexer
 from ..parser import Parser
 from ..exceptions import HeLangException
-from typing import TextIO
 
 
 class Runner(threading.Thread):
